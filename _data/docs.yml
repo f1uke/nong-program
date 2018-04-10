@@ -4,10 +4,12 @@
   - title: เชิญรับชมวิดีโอก่อนเริ่มเรียน
     url: introduction
 
-- title: เครื่องมือสำหรับโปรแกรมเมอร์
-  url: tools
+- title: เครื่องมือเริ่มต้นสำหรับโปรแกรมเมอร์
+  url: basic-tools
   docs:
   - title: Git
     url: git
   - title: Editor
     url: editor
+  - title: Gitter
+    url: gitter
