@@ -4,13 +4,13 @@
   - title: เชิญรับชมวิดีโอก่อนเริ่มเรียน
     url: introduction
 
-- title: เครื่องมือเริ่มต้นสำหรับโปรแกรมเมอร์
-  url: basic-tools
+- title: โปรแกรมพื้นฐาน
+  url: basic-environment
   docs:
-  - title: Git
-    url: git
-  - title: Editor
-    url: editor
+  - title: Git (Version control)
+    url: version-control-git
+  - title: Editor และ Compiler
+    url: editor-and-compiler
 
 - title: บทฝึกระดับพื้นฐาน
   url: basic-programming
