@@ -15,5 +15,5 @@
 - title: บทฝึกระดับพื้นฐาน
   url: basic-programming
   docs:
-  - title: บทนำก่อนเรียน
-    url: introduction
+  - title: Hello World!
+    url: hello-world
