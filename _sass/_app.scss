@@ -93,21 +93,6 @@ body {
   }
 }
 
-.bd-special-shadow {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(transparent));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
-  height: 8px;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: center top;
-  transform-origin: center top;
-}
-
 @media screen and (max-width: 1023px) {
   .bd-is-clipped-touch {
     overflow: hidden !important;
@@ -130,4 +115,27 @@ body {
     color: initial;
     box-shadow: inset 0px -2px 0px #3273dc;
   }
+}
+
+@media only screen and (min-width: 1023px) {
+  .section.is-docs {
+    margin-left: 300px;
+    padding: 3rem 0;
+  }
+
+  .footer.is-docs {
+    margin-left: 300px;
+  }
+
+  .menu.is-docs {
+    position: fixed;
+    padding: 10px;
+    overflow-y: auto;
+    width: 300px;
+    height: calc(100vh - 52px);
+  }
+}
+
+.navbar {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }

@@ -1,5 +1,6 @@
-<div class="container">
-  <nav class="navbar-brand">
+<nav id="navbar" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div id="specialShadow" class="bd-special-shadow"></div>
+  <div class="navbar-brand">
     <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ site.baseurl | append: '/'}}">{{ site.name }}</a>
     {% if site.navigation.github %}
       <a class="navbar-item is-hidden-desktop text-github" target="_blank" href="https://github.com/{{ site.navigation.github }}">
@@ -21,11 +22,11 @@
       <span></span>
       <span></span>
     </div>
-  </nav>
+  </div>
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-start">
       <a class="navbar-item is-hidden-desktop text-patreon" target="_blank" href="https://www.patreon.com/bePatron?c=1655061">
-        <span class="icon"><i class="fab fa-patreon"></i></span>
+        <span class="icon is-medium"><i class="fab fa-patreon"></i></span>
         <span>สนับสนุนเรา</span>
       </a>
       <a class="navbar-item {% if page.is_docs %}is-active{% endif %}" href="{{ site.baseurl | append: '/docs/getting-started/introduction' }}">
@@ -87,4 +88,4 @@
       </a>
     </div>
   </div>
-</div>
+</nav>
