@@ -29,17 +29,19 @@
         <span>สนับสนุนเรา</span>
       </a>
       <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ site.baseurl | append: '/docs/getting-started/introduction' }}">
-        🎓 เรียนกับน้องโปรแกรม
+        <span class="icon is-medium has-text-success"><i class="fas fa-book"></i></span>
+        <span>เริ่มเรียน</span>
       </a>
       <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ site.baseurl | append: '/news' }}">
-        📰 ข่าวสาร
+        <span class="icon is-medium has-text-danger"><i class="fas fa-newspaper"></i></span>
+        <span>ข่าวสาร</span>
       </a>
       <!-- <a class="navbar-item {% if page.is_awesome %}is-active{% endif %}" href="{{ site.baseurl | append: '/awesome' }}">ข้อมูลที่มีประโยชน์</a> -->
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
           เพิ่มเติม
         </div>
-        <div id="moreDropdown" class="navbar-dropdown is-boxed">
+        <div id="moreDropdown" class="navbar-dropdown">
           <a class="navbar-item " href="#">
             <div class="media">
               <div class="media-left">
@@ -80,7 +82,7 @@
         </a>
       {% endif %}
       <a class="navbar-item is-hidden-touch text-patreon" target="_blank" href="https://www.patreon.com/bePatron?c=1655061">
-        <span class="icon is-medium"><i class="fab fa-lg fa-patreon"></i></span>
+        <span class="icon is-medium text-patreon"><i class="fab fa-lg fa-patreon"></i></span>
         <span>สนับสนุนเรา</span>
       </a>
     </div>

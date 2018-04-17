@@ -1,12 +1,5 @@
 $link: #3273dc;
 
-@media screen and (min-width: 1024px) {
-  a.navbar-item.is-active:not(:hover), a.navbar-item.is-active, a.navbar-link.is-active, a.navbar-link.is-active:not(:hover) {
-    background-color: $link;
-    color: white;
-  }
-}
-
 .prompt {
   &.is-heading {
     font-size: 2.5rem;

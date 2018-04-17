@@ -21,7 +21,7 @@
   <link rel="shortcut icon" type="image/png" href="{{ 'assets/favicon/16x16.png' | absolute_url }}" sizes="16x16"/>
   <link rel="shortcut icon" type="image/png" href="{{ 'assets/favicon/32x32.png' | absolute_url }}" sizes="32x32"/>
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
-  {% include head.html %}
+  <link rel="manifest" href="{{ 'manifest.json' | absolute_url }}">
 </head>
 <body>
   <div id="shadowed" style="display: none;"></div>
@@ -37,18 +37,10 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <p>
-          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-        </p>
-        <p>
-          <strong>jekyll-bulma-theme</strong> by <a href="https://github.com/nakorndev">nakorndev</a>. Powered by <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://pages.github.com/">GitHub Pages</a>.
-        </p>
+        Hello footer
       </div>
     </div>
   </footer>
   <script src="{{ 'assets/js/app.js' | absolute_url }}"></script>
-  {% include foot.html %}
 </body>
 </html>

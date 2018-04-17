@@ -72,33 +72,6 @@ body {
   list-style: none;
 }
 
-// .content {
-//   h1::before {
-//     content: "#";
-//     @extend %header-hashtag;
-//   }
-//   h2::before {
-//     content: "##";
-//     @extend %header-hashtag;
-//   }
-//   h3::before {
-//     content: "###";
-//     @extend %header-hashtag;
-//   }
-//   h4::before {
-//     content: "####";
-//     @extend %header-hashtag;
-//   }
-//   h5::before {
-//     content: "#####";
-//     @extend %header-hashtag;
-//   }
-//   h6::before {
-//     content: "######";
-//     @extend %header-hashtag;
-//   }
-// }
-
 .message-body .media {
   img.avatar {
     height: 80px;
@@ -149,4 +122,12 @@ body {
   left: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, .5);
+}
+
+@media screen and (min-width: 1024px) {
+  a.navbar-item.is-active:not(:hover), a.navbar-item.is-active, a.navbar-link.is-active, a.navbar-link.is-active:not(:hover) {
+    background-color: transparent;
+    color: initial;
+    box-shadow: inset 0px -2px 0px #3273dc;
+  }
 }
