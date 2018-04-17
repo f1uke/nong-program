@@ -8,6 +8,11 @@ email: nakorndev@gmail.com
 baseurl: /nong-program
 url: https://anitation.github.io
 
+exclude: [
+  'assets/images/_achieve/*',
+  '_docs/_achieve/*',
+]
+
 markdown: kramdown
 plugins:
   - jekyll-feed
