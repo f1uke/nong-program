@@ -9,15 +9,9 @@ baseurl: "/nong-program"
 url: "https://anitation.github.io"
 
 markdown: kramdown
-theme: jekyll-bulma-theme
-remote_theme: anitation/jekyll-bulma-theme
 plugins:
   - jekyll-feed
   - jekyll-paginate
-
-version:
-  bulma: 0.6.2
-  font-awesome: 5.0.8
 
 navigation:
   github: anitation/nong-program
