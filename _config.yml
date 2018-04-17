@@ -48,8 +48,8 @@ defaults:
       path: _docs
       type: docs
     values:
-      layout: doc
-      is_doc: true
+      layout: docs
+      is_docs: true
       title: Documentation
       subtitle: เอกสารการเรียนรู้กับน้องโปรแกรม
   - scope:
