@@ -1,19 +1,7 @@
-- title: เริ่มเรียนรู้ไปกับเรา!
-  url: getting-started
-  docs:
-  - title: เชิญรับชมวิดีโอก่อนเริ่มเรียน
-    url: introduction
-
-- title: โปรแกรมพื้นฐาน
-  url: basic-environment
-  docs:
-  - title: Git (Version control)
-    url: version-control-git
-  - title: Editor และ Compiler
-    url: editor-and-compiler
-
-- title: บทฝึกระดับพื้นฐาน
+- title: Basic Programming
   url: basic-programming
-  docs:
-  - title: Hello World!
+  sub_docs:
+  - title: Editor
+    url: editor
+  - title: Hello World
     url: hello-world
