@@ -1,0 +1,26 @@
+@media screen and (min-width: 1024px) {
+  a.navbar-item.is-active:not(:hover), a.navbar-item.is-active, a.navbar-link.is-active, a.navbar-link.is-active:not(:hover) {
+    background-color: transparent;
+    color: initial;
+    box-shadow: inset 0px -2px 0px $link;
+  }
+
+  .section.is-docs {
+    margin-left: 300px;
+    padding: 3rem 0;
+  }
+
+  .footer.is-docs {
+    margin-left: 300px;
+  }
+
+  .menu.is-docs {
+    background: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    padding: 10px;
+    overflow-y: auto;
+    width: 300px;
+    height: calc(100vh - 52px);
+  }
+}

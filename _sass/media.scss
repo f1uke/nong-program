@@ -1,0 +1,20 @@
+.message-body .media {
+  img.avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  blockquote {
+    background-color: transparent;
+    border-left: none;
+    padding: 0 1.5em 0.5em;
+    color: grey;
+    font-size: 1.2rem;
+    &::before {
+      content: "\2014\2014\2014";
+    }
+  }
+  a:not(.button):not(.tag) {
+    text-decoration: none;
+  }
+}
