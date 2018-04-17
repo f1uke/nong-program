@@ -276,11 +276,6 @@ document.addEventListener('DOMContentLoaded', function () {
         subDocs.innerHTML += `<li><a href="#${h2.id}">${h2.innerText.substring(3)}</a></li>`;
       }
     }
-    for (var subDocs of document.getElementsByClassName('sub-docs')) {
-      for (var h2 of docs.getElementsByTagName('h2')) {
-        subDocs.innerHTML += `<li><a href="#${h2.id}">${h2.innerText.substring(3)}</a></li>`;
-      }
-    }
   }
 });
 
