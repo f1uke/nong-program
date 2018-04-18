@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin-top: 52px;
+}
+
+#app {
+  flex: 1 0 auto;
+}
+
+.media-content {
+  overflow: hidden;
+}

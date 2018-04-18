@@ -1,11 +1,5 @@
-- title: เริ่มเรียนรู้ไปกับเรา!
-  url: getting-started
-  docs:
-  - title: เชิญรับชมวิดีโอก่อนเริ่มเรียน
-    url: introduction
-
-- title: เครื่องมือสำหรับโปรแกรมเมอร์
-  url: tools
-  docs:
-  - title: Git
-    url: git
+- title: การเขียนโปรแกรมเบื้องต้น
+  url: basic-programming
+  sub_docs:
+  - title: Editor
+    url: editor

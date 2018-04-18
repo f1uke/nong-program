@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<div class="is-hidden-touch">
+  {% include docs_sidebar.html %}
+</div>
+<section class="section is-docs">
+  <div class="container is-fluid">
+    <div class="field">
+      <div class="media">
+        <div class="media-left">
+          <a class="is-hoverable non-blank" href="{{ page.url | absolute_url }}">
+            <span class="icon is-heading has-text-link">
+              <i class="{{ page.icon }}" {{ page.icon-custom }}></i>
+            </span>
+          </a>
+        </div>
+        <div class="media-body">
+          <div class="title">
+            <a class="non-blank" href="{{ page.url | absolute_url }}">#</a> {{ page.title }}
+          </div>
+          <div class="subtitle">
+            {{ page.subtitle }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if page.duration and page.difficulty %}
+      <div class="field is-grouped is-grouped-multiline">
+        <div class="control">
+          <div class="tags has-addons">
+            <span class="tag">
+              <span class="icon is-small"><i class="fas fa-fire-extinguisher"></i></span>
+              <span>ความยาก</span>
+            </span>
+            <span class="tag is-danger">
+              {% for i in (1..page.difficulty) %}
+                <span class="icon is-small"><i class="fab fa-hotjar"></i></span>
+              {% endfor %}
+            </span>
+          </div>
+        </div>
+        <div class="control">
+          <div class="tags has-addons">
+            <span class="tag">
+              <span class="icon is-small"><i class="fas fa-clock"></i></span>
+              <span>เวลาเรียน</span>
+            </span>
+            <span class="tag is-primary">
+              {% for i in (1..page.duration) %}
+                <span class="icon is-small"><i class="fas fa-bolt"></i></span>
+              {% endfor %}
+            </span>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <hr>
+    <div id="docs" class="content">
+      {{ content }}
+    </div>
+    {% include docs_paginate.html %}
+  </div>
+</section>

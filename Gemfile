@@ -9,7 +9,6 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 3.7.3"
-gem "jekyll-bulma-theme"
 gem "jekyll-paginate"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

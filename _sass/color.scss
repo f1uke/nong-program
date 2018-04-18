@@ -1,0 +1,50 @@
+.text-github, a.navbar-item.text-github:hover {
+  color: $github;
+}
+
+.text-twitter, a.navbar-item.text-twitter:hover {
+  color: $twitter;
+}
+
+.text-facebook, a.navbar-item.text-facebook:hover {
+  color: $facebook;
+}
+
+.text-patreon {
+  color: $patreon;
+}
+
+.is-github {
+  background-color: $github;
+}
+
+.is-twitter {
+  background-color: $twitter;
+}
+
+.is-facebook {
+  background-color: $facebook;
+}
+
+.is-google {
+  background-color: $google;
+}
+
+.is-pinterest {
+  background-color: $pinterest;
+}
+
+.is-patreon {
+  background: $patreon;
+}
+
+.button {
+  &.is-github,
+  &.is-twitter,
+  &.is-facebook,
+  &.is-google,
+  &.is-pinterest {
+    border-color: transparent;
+    color: white;
+  }
+}

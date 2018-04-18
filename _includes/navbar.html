@@ -1,35 +1,71 @@
-<div class="container">
-  <nav class="navbar-brand">
-    <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ site.baseurl | append: '/'}}">{{ site.name }}</a>
+<nav id="navbar" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div id="specialShadow" class="bd-special-shadow"></div>
+  <div class="navbar-brand">
+    <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ site.baseurl | append: '/'}}">
+      👶 {{ site.name }}
+    </a>
     {% if site.navigation.github %}
-      <a class="navbar-item is-hidden-desktop text-github" target="_blank" href="https://github.com/{{ site.navigation.github }}">
+      <a class="navbar-item is-hidden-desktop text-github" target="_blank" href="{{ site.navigation.github | prepend: 'https://github.com/' }}">
         <i class="fab fa-lg fa-github"></i>
       </a>
     {% endif %}
     {% if site.navigation.twitter %}
-      <a class="navbar-item is-hidden-desktop text-twitter" target="_blank" href="https://twitter.com/{{ site.navigation.twitter }}">
+      <a class="navbar-item is-hidden-desktop text-twitter" target="_blank" href="{{ site.navigation.twitter | prepend: 'https://twitter.com/' }}">
         <i class="fab fa-lg fa-twitter"></i>
       </a>
     {% endif %}
     {% if site.navigation.facebook %}
-      <a class="navbar-item is-hidden-desktop text-facebook" target="_blank" href="https://www.facebook.com/{{ site.navigation.facebook }}">
+      <a class="navbar-item is-hidden-desktop text-facebook" target="_blank" href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
         <i class="fab fa-lg fa-facebook"></i>
       </a>
     {% endif %}
-    <a class="navbar-item is-hidden-desktop text-patreon" target="_blank" href="https://www.patreon.com/bePatron?c=1655061">
-      <span class="icon"><i class="fab fa-lg fa-patreon"></i></span>
-    </a>
     <div id="navbarBurger" class="navbar-burger" data-target="navMenu">
       <span></span>
       <span></span>
       <span></span>
     </div>
-  </nav>
+  </div>
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-start">
-      <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ site.baseurl | append: '/docs/getting-started/introduction' }}">เรียนกับน้องโปรแกรม</a>
-      <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ site.baseurl | append: '/news' }}">ข่าวสาร</a>
-      <a class="navbar-item {% if page.is_awesome %}is-active{% endif %}" href="{{ site.baseurl | append: '/awesome' }}">ข้อมูลที่มีประโยชน์</a>
+      {% if site.navigation.patreon %}
+        <a class="navbar-item is-hidden-desktop text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
+          <span class="icon is-medium"><i class="fab fa-patreon"></i></span>
+          <span>สนับสนุนเรา</span>
+        </a>
+      {% endif %}
+      <a class="navbar-item {% if page.is_docs %}is-active{% endif %}" href="{{ site.baseurl | append: '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url }}">
+        <span class="icon is-medium has-text-success"><i class="fas fa-book"></i></span>
+        <span>เริ่มเรียน</span>
+      </a>
+      <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ site.baseurl | append: '/news' }}">
+        <span class="icon is-medium has-text-danger"><i class="fas fa-newspaper"></i></span>
+        <span>ข่าวสาร</span>
+      </a>
+      <!-- <a class="navbar-item {% if page.is_awesome %}is-active{% endif %}" href="{{ site.baseurl | append: '/awesome' }}">ข้อมูลที่มีประโยชน์</a> -->
+      <div class="navbar-item has-dropdown is-hoverable">
+        <div class="navbar-link">
+          เพิ่มเติม
+        </div>
+        <div id="moreDropdown" class="navbar-dropdown">
+          <a class="navbar-item " href="#">
+            <div class="media">
+              <div class="media-left">
+                <span class="icon is-large has-text-success">
+                  <span class="fas fa-2x fa-certificate"></span>
+                </span>
+              </div>
+              <div class="media-content">
+                <p>
+                  <strong>Awesome</strong>
+                  <br>
+                  <small>รวมข้อมูลที่น่าสนใจสำหรับ Programmer</small>
+                </p>
+              </div>
+            </div>
+          </a>
+          <hr class="navbar-divider">
+        </div>
+      </div>
       <div class="is-hidden-desktop docs-nav-menu">
         {% include docs_sidebar.html %}
       </div>
@@ -37,23 +73,28 @@
     <div class="navbar-end">
       {% if site.navigation.github %}
         <a class="navbar-item is-hidden-touch text-github" target="_blank" href="{{ site.navigation.github | prepend: 'https://github.com/' }}">
-          <span class="icon"><i class="fab fa-lg fa-github"></i></span>
+          <span class="icon is-medium"><i class="fab fa-lg fa-github"></i></span>
+          <span>GitHub</span>
         </a>
       {% endif %}
       {% if site.navigation.twitter %}
         <a class="navbar-item is-hidden-touch text-twitter" target="_blank" href="{{ site.navigation.twitter | prepend: 'https://twitter.com/' }}">
-          <span class="icon"><i class="fab fa-lg fa-twitter"></i></span>
+          <span class="icon is-medium"><i class="fab fa-lg fa-twitter"></i></span>
+          <span>Twitter</span>
         </a>
       {% endif %}
       {% if site.navigation.facebook %}
         <a class="navbar-item is-hidden-touch text-facebook" target="_blank" href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
-          <span class="icon"><i class="fab fa-lg fa-facebook"></i></span>
+          <span class="icon is-medium"><i class="fab fa-lg fa-facebook"></i></span>
+          <span>Facebook</span>
         </a>
       {% endif %}
-      <a class="navbar-item is-hidden-touch text-patreon" target="_blank" href="https://www.patreon.com/bePatron?c=1655061">
-        <span class="icon is-medium"><i class="fab fa-lg fa-patreon"></i></span>
-        <span>สนับสนุนเรา</span>
-      </a>
+      {% if site.navigation.patreon %}
+        <a class="navbar-item is-hidden-touch text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
+          <span class="icon is-medium text-patreon"><i class="fab fa-lg fa-patreon"></i></span>
+          <span>สนับสนุนเรา</span>
+        </a>
+      {% endif %}
     </div>
   </div>
-</div>
+</nav>

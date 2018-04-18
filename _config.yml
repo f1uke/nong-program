@@ -1,27 +1,31 @@
-name: "nong-program"
-title: "เว็บบล็อกเรียนรู้การเขียนโปรแกรม"
-description: "เว็บบล็อกเรียนรู้การเขียนโปรแกรมฟรี! จากรุ่นพี่โปรแกรมเมอร์ใจดี"
-repository: "https://github.com/anitation/nong-program"
-timezone: "Asia/Bangkok"
-lang: "th"
-email: "nakorndev@gmail.com"
-baseurl: "/nong-program"
-url: "https://anitation.github.io"
+name: น้องโปรแกรม
+title: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
+description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub.com สำหรับผู้ที่ต้องการเริ่มแบบง่ายๆ รวดเร็ว และมีการสอนใช้เครื่องมือที่ทันสมัยกว่า
+repository: https://github.com/anitation/nong-program
+timezone: Asia/Bangkok
+lang: th
+email: nakorndev@gmail.com
+baseurl: /nong-program
+url: https://anitation.github.io
+
+exclude: [
+  'assets/images/_achieve/*',
+  '_docs/_achieve/*',
+]
 
 markdown: kramdown
-theme: jekyll-bulma-theme
-remote_theme: anitation/jekyll-bulma-theme
 plugins:
   - jekyll-feed
   - jekyll-paginate
 
 version:
-  bulma: 0.6.2
-  font-awesome: 5.0.8
+  bulma: 0.7.0
+  fontawesome: 5.0.10
 
 navigation:
   github: anitation/nong-program
   facebook: 777742965747869
+  patreon: bePatron?c=1655061
 
 paginate: 5
 excerpt_separator: <!--more-->
@@ -32,46 +36,37 @@ sass:
 
 collections:
   docs:
-    permalink: "/docs/:path/"
+    permalink: /docs/:path/
     output: true
   news:
-    permalink: "/news/:year/:month/:day/:title"
+    permalink: /news/:year/:month/:day/:title
     output: true
   awesome:
-    permalink: "/awesome/:path/"
+    permalink: /awesome/:path/
     output: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: _posts
       type: posts
     values:
       layout: post
       is_post: true
-      title: nong-program Posts
-      subtitle: โพสต์ของน้องโปรแกรม
   - scope:
       path: _docs
       type: docs
     values:
-      layout: doc
-      is_doc: true
-      title: Documentation
-      subtitle: เอกสารการเรียนรู้กับน้องโปรแกรม
+      layout: docs
+      is_docs: true
   - scope:
       path: _news
       type: news
     values:
       layout: news
       is_news: true
-      title: News
-      subtitle: ข่าวสารที่เกี่ยวข้องกับน้องโปรแกรม
   - scope:
       path: _awesome
       type: awesome
     values:
       layout: awesome
-      is_awesome: true
-      title: Awesome
-      subtitle: รวมข้อมูลดีๆที่ต้องน้องยังร้อง "AWESOME!"
+      is_extra: true

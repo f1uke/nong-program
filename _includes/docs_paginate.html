@@ -2,7 +2,7 @@
 
 {% for head in heads %}
 
-  {% assign docs = site.data.docs[forloop.index0] | map: 'docs' | map: 'url' | join: ',' | split: ',' %}
+  {% assign docs = site.data.docs[forloop.index0] | map: 'sub_docs' | map: 'url' | join: ',' | split: ',' %}
   {% for document in docs %}
 
     {% assign document_url = document | prepend: '/' | prepend: head | prepend:"/docs/" | append:"/" %}
@@ -14,7 +14,7 @@
         {% else %}
           {% if forloop.first %}
             {% assign previous = forloop.parentloop.index0 | minus: 1 %}
-            {% assign previous_docs = site.data.docs[previous].docs | map: 'url' | spilt: ',' | last %}
+            {% assign previous_docs = site.data.docs[previous].sub_docs | map: 'url' | spilt: ',' | last %}
             {% assign previous_head = site.data.docs[previous].url %}
             {% assign previous_page = previous_docs | prepend: '/' | prepend: previous_head | prepend:"/docs/" | append:"/" %}
           {% else %}
@@ -28,7 +28,7 @@
         {% else %}
           {% if forloop.last %}
             {% assign next = forloop.parentloop.index0 | plus: 1 %}
-            {% assign next_docs = site.data.docs[next].docs[0].url %}
+            {% assign next_docs = site.data.docs[next].sub_docs[0].url %}
             {% assign next_head = site.data.docs[next].url %}
             {% assign next_page = next_docs | prepend: '/' | prepend: next_head | prepend:"/docs/" | append:"/" %}
           {% else %}
