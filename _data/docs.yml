@@ -3,3 +3,5 @@
   sub_docs:
   - title: Editor
     url: editor
+  - title: JavaScript
+    url: javascript

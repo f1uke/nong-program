@@ -14,6 +14,10 @@
   }
 }
 
+.badge-level:not(:last-child) {
+  margin-right: 3px;
+}
+
 .menu.is-docs {
   p.menu-label {
     font-size: 1rem;
