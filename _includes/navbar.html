@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div id="specialShadow" class="bd-special-shadow"></div>
   <div class="navbar-brand">
-    <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ site.baseurl | append: '/'}}">
+    <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ '/' | absolute_url }}">
       👶 {{ site.name }}
     </a>
     {% if site.navigation.github %}
@@ -33,21 +33,20 @@
           <span>สนับสนุนเรา</span>
         </a>
       {% endif %}
-      <a class="navbar-item {% if page.is_docs %}is-active{% endif %}" href="{{ site.baseurl | append: '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url }}">
+      <a class="navbar-item {% if page.is_docs %}is-active{% endif %}" href="{{ '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
         <span class="icon is-medium has-text-success"><i class="fas fa-book"></i></span>
         <span>เริ่มเรียน</span>
       </a>
-      <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ site.baseurl | append: '/news' }}">
+      <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ '/' | absolute_url }}">
         <span class="icon is-medium has-text-danger"><i class="fas fa-newspaper"></i></span>
         <span>ข่าวสาร</span>
       </a>
-      <!-- <a class="navbar-item {% if page.is_awesome %}is-active{% endif %}" href="{{ site.baseurl | append: '/awesome' }}">ข้อมูลที่มีประโยชน์</a> -->
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">
           เพิ่มเติม
         </div>
         <div id="moreDropdown" class="navbar-dropdown">
-          <a class="navbar-item " href="#">
+          <a class="navbar-item " href="{{ '/' | absolute_url }}">
             <div class="media">
               <div class="media-left">
                 <span class="icon is-large has-text-success">
