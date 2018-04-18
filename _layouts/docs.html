@@ -11,44 +11,44 @@ layout: default
       <div class="field is-grouped is-grouped-multiline">
         <div class="control">
           <div class="tags has-addons">
-            <span class="tag is-medium is-dark">
+            <span class="tag is-dark">
               ระดับ
             </span>
-            <span class="tag is-medium is-info">
+            <span class="tag is-info">
               {{ page.level }}
             </span>
           </div>
         </div>
         <div class="control">
           <div class="tags has-addons">
-            <span class="tag is-medium is-dark">
+            <span class="tag is-dark">
               ใช้เวลาเรียน
             </span>
-            <span class="tag is-medium is-primary">
+            <span class="tag is-primary">
               {{ page.duration }} นาที
             </span>
           </div>
         </div>
       </div>
     {% endif %}
-    {% if page.icon %}
-      <span class="icon is-heading has-text-success">
-        <i class="{{ page.icon }}"></i>
-      </span>
-    {% endif %}
-    {% if page.title %}
-      <div class="title">
-          {{ page.title }}
+    <div class="media">
+      <div class="media-left">
+        <a class="is-hoverable non-blank" href="{{ page.url | absolute_url }}">
+          <span class="icon is-heading has-text-link">
+            <i class="{{ page.icon }}" {{ page.icon-custom }}></i>
+          </span>
+        </a>
       </div>
-    {% endif %}
-    {% if page.subtitle %}
-      <div class="subtitle">
-        {{ page.subtitle }}
+      <div class="media-body">
+        <div class="title">
+          <a class="non-blank" href="{{ page.url | absolute_url }}">#</a> {{ page.title }}
+        </div>
+        <div class="subtitle">
+          {{ page.subtitle }}
+        </div>
       </div>
-    {% endif %}
-    {% if page.title and page.subtitle %}
-      <hr>
-    {% endif %}
+    </div>
+    <hr>
     <div id="docs" class="content">
       {{ content }}
     </div>

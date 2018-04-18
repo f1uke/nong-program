@@ -1,7 +1,8 @@
 <aside class="menu is-docs">
   {% for item in site.data.docs %}
     <p class="menu-label">
-      {{ item.title }}
+      <span class="icon"><i class="fas fa-book"></i></span>
+      <span>{{ item.title }}</span>
     </p>
     <ul class="menu-list">
       {% for sub_item in item.sub_docs %}
