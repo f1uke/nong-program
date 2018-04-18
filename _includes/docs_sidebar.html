@@ -8,7 +8,7 @@
       {% for sub_item in item.sub_docs %}
         {% assign url = item.url | prepend: "/docs/" | append: "/" | append: sub_item.url | append: "/" %}
         <li>
-          <a href="{{ url | prepend: site.baseurl }}" {% if page.url == url %}class="is-active"{% endif %}>
+          <a href="{{ url | absolute_url }}" {% if page.url == url %}class="is-active"{% endif %}>
             {{ sub_item.title }}
           </a>
           {% if page.url == url %}
