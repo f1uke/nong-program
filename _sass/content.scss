@@ -1,3 +1,17 @@
+.icon {
+  &.is-heading {
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 30px;
+    float: left;
+    margin-right: 0.75rem;
+    font-size: 2rem;
+  }
+  &.is-heading.has-text-success {
+    border-color: $success;
+  }
+}
+
 .content {
   h1 {
     border-bottom: 1px solid #dbdbdb;

@@ -19,3 +19,8 @@
   z-index: 10;
   background-color: rgba(0, 0, 0, .5);
 }
+
+.navbar-brand a.navbar-item:hover {
+  background-color: #fafafa;
+  color: #3273dc;
+}

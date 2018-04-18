@@ -31,6 +31,24 @@ layout: default
         </div>
       </div>
     {% endif %}
+    {% if page.icon %}
+      <span class="icon is-heading has-text-success">
+        <i class="{{ page.icon }}"></i>
+      </span>
+    {% endif %}
+    {% if page.title %}
+      <div class="title">
+          {{ page.title }}
+      </div>
+    {% endif %}
+    {% if page.subtitle %}
+      <div class="subtitle">
+        {{ page.subtitle }}
+      </div>
+    {% endif %}
+    {% if page.title and page.subtitle %}
+      <hr>
+    {% endif %}
     <div id="docs" class="content">
       {{ content }}
     </div>

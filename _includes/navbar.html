@@ -1,7 +1,9 @@
 <nav id="navbar" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div id="specialShadow" class="bd-special-shadow"></div>
   <div class="navbar-brand">
-    <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ site.baseurl | append: '/'}}">{{ site.name }}</a>
+    <a class="navbar-item {% if page.is_home %}is-active{% endif %}" href="{{ site.baseurl | append: '/'}}">
+      👶 {{ site.name }}
+    </a>
     {% if site.navigation.github %}
       <a class="navbar-item is-hidden-desktop text-github" target="_blank" href="{{ site.navigation.github | prepend: 'https://github.com/' }}">
         <i class="fab fa-lg fa-github"></i>

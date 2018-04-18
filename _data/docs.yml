@@ -1,7 +1,5 @@
-- title: Basic Programming
+- title: โปรแกรมเบื้องต้น
   url: basic-programming
   sub_docs:
   - title: Editor
     url: editor
-  - title: Hello World
-    url: hello-world
