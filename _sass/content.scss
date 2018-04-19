@@ -23,6 +23,9 @@
     font-size: 1rem;
     letter-spacing: inherit;
     text-transform: inherit;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
   }
 }
 
@@ -50,11 +53,11 @@
     padding-top: 10px;
   }
   code {
-    background-color: #49483e;
-    color: #ffffff;
-    border-radius: 3px;
     white-space: nowrap;
     padding: 3px 8px;
+  }
+  blockquote code {
+    background-color: #ececec;
   }
 }
 

@@ -22,6 +22,7 @@ plugins:
 version:
   bulma: 0.7.0
   fontawesome: 5.0.10
+  linkify: 2.1.6
 
 navigation:
   github: anitation/nong-program
