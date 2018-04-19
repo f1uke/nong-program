@@ -1,4 +1,4 @@
-<aside class="menu is-docs">
+<aside data-gumshoe-header class="menu is-docs">
   {% for item in site.data.docs %}
     <p class="menu-label">
       <i class="fas fa-book" style="margin-right: 3px;"></i>
@@ -12,7 +12,7 @@
             {{ sub_item.title }}
           </a>
           {% if page.url == url %}
-            <ul class="sub-docs"></ul>
+            <ul data-gumshoe class="sub-docs"></ul>
           {% endif %}
         </li>
       {% endfor %}
