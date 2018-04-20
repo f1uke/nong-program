@@ -1,3 +1,35 @@
+.language-javascript {
+  margin-top: 20px;
+  position: relative;
+  %runner-pos {
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    vertical-align: middle;
+    top: -10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    z-index: 25;
+    transition: .2s box-shadow;
+  }
+  .runner.fa-play {
+    @extend %runner-pos;
+    right: 10px;
+    background-color: $link;
+  }
+  .runner.fa-copy {
+    @extend %runner-pos;
+    background-color: #909090;
+    right: calc(2.25rem + 10px);
+  }
+  .runner:hover {
+    cursor: pointer;
+  }
+}
 .highlighter-rouge {
   margin-bottom: 10px;
 }

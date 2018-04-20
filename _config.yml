@@ -22,6 +22,7 @@ plugins:
 version:
   bulma: 0.7.0
   fontawesome: 5.0.10
+  tippyjs: 2.5.2
 
 navigation:
   github: anitation/nong-program

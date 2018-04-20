@@ -276,6 +276,32 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
+
+  // JavaScript test script
+
+  function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim();
+    template.innerHTML = html;
+    return template.content.firstChild;
+  }
+
+  var highlights = document.querySelectorAll('.language-javascript');
+  if (highlights) {
+    for (var highlight of highlights) {
+      highlight.prepend(htmlToElement(`<i title="Run a code" class="runner fas fa-play"></i>`));
+      highlight.prepend(htmlToElement(`<i title="Copy a code" class="runner fas fa-copy"></i>`));
+    }
+  }
+
+  // Tippy.js
+
+  tippy('[title]', {
+    animation: 'perspective',
+    distance: 5,
+    duration: [150, 150]
+  });
+
 });
 
 // Offset navbar
