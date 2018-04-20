@@ -291,6 +291,24 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var highlight of highlights) {
       highlight.prepend(htmlToElement(`<i title="Run a code" class="runner fas fa-play"></i>`));
       highlight.prepend(htmlToElement(`<i title="Copy a code" class="runner fas fa-copy"></i>`));
+      [].filter.call(highlight.children, element => {
+        if (element.classList.contains('fa-play')) {
+          element.addEventListener('click', function (event) {
+            eval(event.target.parentElement.querySelector('code').innerText);
+          });
+        }
+        if (element.classList.contains('fa-copy')) {
+          element.addEventListener('click', function (event) {
+            navigator.clipboard.writeText(event.target.parentElement.querySelector('code').innerText).then(function () {
+              document.querySelector('.tippy-content').textContent = 'Copied!';
+              event.target._tippy.show();
+            });
+          });
+          element.addEventListener('mouseleave', function (event) {
+            document.querySelector('.tippy-content').textContent = 'Copy a code';
+          });
+        }
+      });
     }
   }
 
@@ -299,7 +317,8 @@ document.addEventListener('DOMContentLoaded', function () {
   tippy('[title]', {
     animation: 'perspective',
     distance: 5,
-    duration: [150, 150]
+    duration: [150, 150],
+    dynamicTitle: true
   });
 
 });
