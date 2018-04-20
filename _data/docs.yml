@@ -9,3 +9,7 @@
     url: javascript
   - title: Hello World
     url: hello-world
+  - title: Syntax
+    url: syntax
+  - title: Variables
+    url: variables
