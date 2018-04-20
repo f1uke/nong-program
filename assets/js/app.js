@@ -276,10 +276,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
-
-  // Gumshoe
-
-  gumshoe.init();
 });
 
 // Offset navbar

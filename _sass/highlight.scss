@@ -1,7 +1,12 @@
 .highlighter-rouge {
   margin-bottom: 10px;
 }
-
+pre.highlight {
+  border-top: 7px solid #cecece;
+  border-radius: 4px;
+  color: #f8f8f2;
+  background-color: #49483e;
+}
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .c, .highlight .cd {
@@ -207,8 +212,4 @@
 }
 .highlight .nt {
   color: #f92672;
-}
-.highlight {
-  color: #f8f8f2;
-  background-color: #49483e;
 }
