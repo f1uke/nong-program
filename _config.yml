@@ -22,7 +22,6 @@ plugins:
 version:
   bulma: 0.7.0
   fontawesome: 5.0.10
-  gumshoe: 3.5.0
 
 navigation:
   github: anitation/nong-program
