@@ -37,7 +37,7 @@ TODO:
 ทำการเปิดโปรแกรม Visual Studio Code ใน Folder ที่เราเพิ่งได้ Clone repository เข้ามา ให้ทำการสร้างไฟล์ใหม่ชื่อว่า `1-hello-world/index.js` และเขียนโปรแกรมตามด้านล่างต่อไปนี้
 
 ```javascript
-console.log('Hello world!');
+alert('Hello world!');
 ```
 
 จากนั้นทำการ Run Code โดยการกด `▶` หรือกดปุ่ม `Ctrl` + `Alt` + `N` พร้อมกัน เพื่อทำการรันโปรแกรม เราจะเห็นว่าส่วนของ **Output** จะแสดงผลคำว่า `Hello world!` ออกมา

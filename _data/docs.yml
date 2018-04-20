@@ -3,8 +3,6 @@
   sub_docs:
   - title: Editor
     url: editor
-  - title: GitHub
-    url: github
   - title: JavaScript
     url: javascript
   - title: Hello World

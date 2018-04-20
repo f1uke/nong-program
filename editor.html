@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
+<script>
+  monaco.editor.create(document.getElementById("container"), {
+    value: "function hello() {\n\talert('Hello world!');\n}",
+    language: "javascript"
+  });
+</script>
