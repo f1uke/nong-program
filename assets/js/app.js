@@ -19,32 +19,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+
+  // Scrolling
+
+  var shadowedEl = document.getElementById('shadowed');
+  var navbarEl = document.getElementById('navbar');
+  var navbarBurger = document.getElementById('navbarBurger');
+  var NAVBAR_HEIGHT = 52;
+  var THRESHOLD = 160;
+  var navbarOpen = false;
+  var horizon = NAVBAR_HEIGHT;
+  var whereYouStoppedScrolling = 0;
+  var scrollFactor = 0;
+  var currentTranslate = 0;
+
+  navbarBurger.addEventListener('click', function (el) {
+    navbarOpen = !navbarOpen;
+    shadowedEl.style.display = shadowedEl.style.display == 'none' ? 'block' : 'none';
+  });
+
+
   if (detectMob()) {
-
-    // Scrolling
-
-    var shadowedEl = document.getElementById('shadowed');
-    var navbarEl = document.getElementById('navbar');
-    var navbarBurger = document.getElementById('navbarBurger');
-    var NAVBAR_HEIGHT = 52;
-    var THRESHOLD = 160;
-    var navbarOpen = false;
-    var horizon = NAVBAR_HEIGHT;
-    var whereYouStoppedScrolling = 0;
-    var scrollFactor = 0;
-    var currentTranslate = 0;
-
-    navbarBurger.addEventListener('click', function (el) {
-      navbarOpen = !navbarOpen;
-
-      if (navbarOpen) {
-        rootEl.classList.add('bd-is-clipped-touch');
-        shadowedEl.style.display = shadowedEl.style.display == 'none' ? 'block' : 'none';
-      } else {
-        rootEl.classList.remove('bd-is-clipped-touch');
-        shadowedEl.style.display = shadowedEl.style.display == 'none' ? 'block' : 'none';
-      }
-    });
 
     function upOrDown(lastY, currentY) {
       if (currentY >= lastY) {
