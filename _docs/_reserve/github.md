@@ -52,7 +52,7 @@ duration: 1
 
 [GitHub](https://github.com/) เป็นผู้ให้บริการ Git ที่สามารถทำการเชื่อมต่อบนอินเตอร์เน็ตได้ และมีการติดตามการเขียนโปรแกรมแบบ Source code ของคุณ ทำให้ช่วยสร้างโปรไฟล์สำหรับการสมัครงานได้ค่อนข้างดี
 
-โดย GitHub ก็เปิดโอกาสให้โปรแกรมของคุณที่มีผู้อื่นๆสนใจ สามารถเข้าร่วมเป็น Contributors เพื่อพัฒนาโปรแกรมร่วมกันได้ เช่นเดียวกับ Repository ในชื่อ [anitation/nong-program](https://github.com/anitation/nong-program) ของเราที่ใช้เพื่อพัฒนาเนื้อหาเหล่านี้ขึ้นมา
+โดย GitHub ก็เปิดโอกาสให้โปรแกรมของคุณที่มีผู้อื่นๆสนใจ สามารถเข้าร่วมเป็น Contributors เพื่อพัฒนาโปรแกรมร่วมกันได้ เช่นเดียวกับ Repository ในชื่อ [nakorndev/nong-program](https://github.com/nakorndev/nong-program) ของเราที่ใช้เพื่อพัฒนาเนื้อหาเหล่านี้ขึ้นมา
 
 > **หมายเหตุ:** นอกจาก GitHub แล้ว ยังมีเว็บไซต์และผู้ให้บริการอื่นๆอีกมากมาย เช่น [BitBucket](https://bitbucket.org/), [GitLab](https://gitlab.com/)
 

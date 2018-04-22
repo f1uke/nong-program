@@ -1,12 +1,12 @@
 name: น้องโปรแกรม
 title: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
 description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub.com สำหรับผู้ที่ต้องการเริ่มแบบง่ายๆ รวดเร็ว และมีการสอนใช้เครื่องมือที่ทันสมัยกว่า
-repository: https://github.com/anitation/nong-program
+repository: https://github.com/nakorndev/nong-program
 timezone: Asia/Bangkok
 lang: th
 email: nakorndev@gmail.com
 baseurl: /nong-program
-url: https://anitation.github.io
+url: https://nakorndev.github.io
 
 exclude: [
   assets/images/_achieve/*,
@@ -25,7 +25,7 @@ version:
   tippyjs: 2.5.2
 
 navigation:
-  github: anitation/nong-program
+  github: nakorndev/nong-program
   facebook: 777742965747869
   patreon: bePatron?c=1655061
 

@@ -1,7 +1,7 @@
 # น้องโปรแกรมที่เรารัก ❤
 
-- รับชมเว็บบล็อกออนไลน์ได้ที่ [https://anitation.github.io/nong-program/](https://anitation.github.io/nong-program/)
-- ดาวน์โหลดได้ที่ [https://github.com/anitation/nong-program/releases](https://github.com/anitation/nong-program/releases)
+- รับชมเว็บบล็อกออนไลน์ได้ที่ [https://nakorndev.github.io/nong-program/](https://nakorndev.github.io/nong-program/)
+- ดาวน์โหลดได้ที่ [https://github.com/nakorndev/nong-program/releases](https://github.com/nakorndev/nong-program/releases)
 - อ่านวิธีการ Contributes ได้ที่ [/.github/CONTRIBUTING.md](/.github/CONTRIBUTING.md)
 
 ## ลิขสิทธิ์
