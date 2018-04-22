@@ -286,15 +286,30 @@ document.addEventListener('DOMContentLoaded', function () {
     return raw ? parseInt(raw[2], 10) : false;
   }
 
+  function jsonToQueryString(json) {
+    return '?' +
+      Object.keys(json).map(function(key) {
+        return encodeURIComponent(key) + '=' +
+          encodeURIComponent(json[key]);
+      }).join('&');
+  }
+
   var highlights = document.querySelectorAll('.language-javascript');
   if (highlights) {
     for (var highlight of highlights) {
       highlight.prepend(htmlToElement(`<i title="Run a code" class="runner fas fa-play"></i>`));
+      highlight.prepend(htmlToElement(`<i title="Open in editor" class="runner fas fa-code"></i>`));
       highlight.prepend(htmlToElement(`<i title="Copy a code" class="runner fas fa-copy"></i>`));
       [].filter.call(highlight.children, element => {
         if (element.classList.contains('fa-play')) {
           element.addEventListener('click', function (event) {
             eval(event.target.parentElement.querySelector('code').innerText);
+          });
+        }
+        if (element.classList.contains('fa-code')) {
+          element.addEventListener('click', function (event) {
+            var win = window.open(`/nong-program/editor${jsonToQueryString({ value: event.target.parentElement.querySelector('code').innerText })}`, '_blank');
+            win.focus();
           });
         }
         if (element.classList.contains('fa-copy')) {

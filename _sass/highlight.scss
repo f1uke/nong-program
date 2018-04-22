@@ -18,16 +18,24 @@
   }
   .runner.fa-play {
     @extend %runner-pos;
-    right: 10px;
+    left: 10px;
     background-color: $link;
+  }
+  .runner.fa-code {
+    @extend %runner-pos;
+    background-color: #6ba7f1;
+    left: calc(2.25rem + 10px);
   }
   .runner.fa-copy {
     @extend %runner-pos;
     background-color: #909090;
-    right: calc(2.25rem + 10px);
+    left: calc(4.5rem + 10px);
   }
   .runner:hover {
     cursor: pointer;
+  }
+  pre.highlight {
+    padding-top: 25px;
   }
 }
 .highlighter-rouge {

@@ -43,15 +43,19 @@ title: Editor
 <script>
   require.config({ paths: { 'vs': '{{ "assets/monaco/min/vs" | absolute_url }}' }});
   require(['vs/editor/editor.main'], function() {
+    var params = new URL(window.location).searchParams;
+    const defaultValue = `function sayHello(name) {
+  return alert('Hello, ' + name);
+}
+
+sayHello('nong-program');`;
+    var value = params.get('value') || defaultValue;
+
     window._editor = monaco.editor.create(document.getElementById('monaco'), {
       language: 'javascript',
       theme: 'vs-dark',
       fontSize: 18,
-      value: `function sayHello(name) {
-  return alert('Hello, ' + name);
-}
-
-sayHello('nong-program');`
+      value: value
     });
     window.onresize = function() {
 			window._editor.layout();
