@@ -1,8 +1,6 @@
 - title: การเขียนโปรแกรมเบื้องต้น
   url: basic-programming
   sub_docs:
-  - title: Editor
-    url: editor
   - title: JavaScript
     url: javascript
   - title: Hello World

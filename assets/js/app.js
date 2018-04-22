@@ -1,5 +1,11 @@
 'use strict';
 
+Noty.overrideDefaults({
+  layout: 'topCenter',
+  theme: 'sunset',
+  timeout: 3000
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // Detech mobile
@@ -303,7 +309,14 @@ document.addEventListener('DOMContentLoaded', function () {
       [].filter.call(highlight.children, element => {
         if (element.classList.contains('fa-play')) {
           element.addEventListener('click', function (event) {
-            eval(event.target.parentElement.querySelector('code').innerText);
+            try {
+              eval(event.target.parentElement.querySelector('code').innerText);
+            } catch (e) {
+              new Noty({
+                text: e.message,
+                type: 'error'
+              }).show();
+            }
           });
         }
         if (element.classList.contains('fa-code')) {
