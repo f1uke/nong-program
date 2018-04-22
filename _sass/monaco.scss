@@ -1,0 +1,18 @@
+#monaco {
+  position: fixed;
+  z-index: 27;
+  top: 102px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#monaco-control {
+  div.button {
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+  span.tag {
+    margin-top: 14px;
+  }
+}

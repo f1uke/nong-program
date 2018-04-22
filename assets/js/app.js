@@ -281,6 +281,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return template.content.firstChild;
   }
 
+  function getChromeVersion() {
+    var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+    return raw ? parseInt(raw[2], 10) : false;
+  }
+
   var highlights = document.querySelectorAll('.language-javascript');
   if (highlights) {
     for (var highlight of highlights) {
@@ -294,13 +299,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (element.classList.contains('fa-copy')) {
           element.addEventListener('click', function (event) {
-            navigator.clipboard.writeText(event.target.parentElement.querySelector('code').innerText).then(function () {
-              document.querySelector('.tippy-content').textContent = 'Copied!';
-              event.target._tippy.show();
-            });
-          });
-          element.addEventListener('mouseleave', function (event) {
-            document.querySelector('.tippy-content').textContent = 'Copy a code';
+            if (getChromeVersion() >= 66) {
+              navigator.clipboard.writeText(event.target.parentElement.querySelector('code').innerText);
+            } else {
+              alert('การคัดลอกข้อความจะรองรับเฉพาะบน Google Chrome เวอร์ชั่น 66 ขึ้นไป เนื่องจากเราใช้ Async Clipboard API ในการคัดลอก\n\nอ่านเพิ่มเติมที่ https://developers.google.com/web/updates/2018/04/nic66#async-clipboard');
+            }
           });
         }
       });

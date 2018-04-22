@@ -1,11 +1,63 @@
 ---
 layout: default
+title: Editor
 ---
 
-<div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
+<div id="monaco-control">
+  <div class="field is-grouped is-grouped-multiline">
+    <div class="control">
+      <div id="monaco-run" class="button is-primary">
+        <span class="icon"><i class="fas fa-play"></i></span>
+        <span>Run a code</span>
+      </div>
+    </div>
+    <div class="control">
+      <a href="https://github.com/Microsoft/monaco-editor">
+        <div class="tags has-addons">
+          <span class="tag is-link">Editor</span>
+          <span class="tag is-dark">Monaco v0.12.0</span>
+        </div>
+      </a>
+    </div>
+    <div class="control">
+      <div class="tags has-addons">
+        <span class="tag is-info">Language</span>
+        <span class="tag is-dark">JavaScript</span>
+      </div>
+    </div>
+    <div class="control">
+      <div class="tags has-addons">
+        <span class="tag is-info">Theme</span>
+        <span class="tag is-dark">vs-dark</span>
+      </div>
+    </div>
+    <div class="control">
+      <div class="tags has-addons">
+        <span class="tag is-danger">Mobile Support</span>
+        <span class="tag is-dark">No</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="monaco"></div>
 <script>
-  monaco.editor.create(document.getElementById("container"), {
-    value: "function hello() {\n\talert('Hello world!');\n}",
-    language: "javascript"
+  require.config({ paths: { 'vs': '{{ "assets/monaco/min/vs" | absolute_url }}' }});
+  require(['vs/editor/editor.main'], function() {
+    window._editor = monaco.editor.create(document.getElementById('monaco'), {
+      language: 'javascript',
+      theme: 'vs-dark',
+      fontSize: 18,
+      value: `function sayHello(name) {
+  return alert('Hello, ' + name);
+}
+
+sayHello('nong-program');`
+    });
+    window.onresize = function() {
+			window._editor.layout();
+		};
+  });
+  document.getElementById('monaco-run').addEventListener('click', function () {
+    eval(window._editor.domElement.innerText);
   });
 </script>
