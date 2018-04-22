@@ -58,6 +58,10 @@ sayHello('nong-program');`
 		};
   });
   document.getElementById('monaco-run').addEventListener('click', function () {
-    eval(window._editor.domElement.innerText);
+    try {
+      eval(window._editor.domElement.innerText);
+    } catch (e) {
+      alert(e);
+    }
   });
 </script>
