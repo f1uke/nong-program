@@ -1,41 +1,38 @@
 .language-javascript {
   margin-top: 20px;
   position: relative;
-  %runner-pos {
-    width: 30px;
-    height: 30px;
+  .runner {
+    width: 24px;
+    height: 24px;
     justify-content: center;
     align-items: center;
     display: flex;
     vertical-align: middle;
-    top: -10px;
+    top: 7px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 0px;
     color: white;
     position: absolute;
     z-index: 25;
-    transition: .2s box-shadow;
+    font-size: .8rem;
   }
   .runner.fa-play {
-    @extend %runner-pos;
-    left: 10px;
-    background-color: $link;
+    left: 0;
+    background-color: #00d1b2;
   }
   .runner.fa-code {
-    @extend %runner-pos;
-    background-color: #6ba7f1;
-    left: calc(2.25rem + 10px);
+    background-color: #3273dc;
+    left: 1.5rem;
   }
   .runner.fa-copy {
-    @extend %runner-pos;
     background-color: #909090;
-    left: calc(4.5rem + 10px);
+    left: 3rem;
   }
   .runner:hover {
     cursor: pointer;
   }
   pre.highlight {
-    padding-top: 25px;
+    padding-top: 35px;
   }
 }
 .highlighter-rouge {
@@ -54,11 +51,11 @@ pre.highlight {
   font-style: italic;
 }
 .highlight .cm {
-  color: #75715e;
+  color: #9e9982;
   font-style: italic;
 }
 .highlight .c1 {
-  color: #75715e;
+  color: #9e9982;
   font-style: italic;
 }
 .highlight .cp {
@@ -71,8 +68,7 @@ pre.highlight {
   font-style: italic;
 }
 .highlight .err {
-  color: #960050;
-  background-color: #1e0010;
+  color: #ffffff;
 }
 .highlight .gi {
   color: #ffffff;

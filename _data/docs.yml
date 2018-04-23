@@ -5,7 +5,13 @@
     url: javascript
   - title: Hello World
     url: hello-world
-  - title: Syntax
-    url: syntax
+  - title: Code Structure
+    url: code-structure
   - title: Variables
     url: variables
+
+- title: JavaScript 101
+  url: javascript-101
+  sub_docs:
+  - title: Syntax
+    url: syntax
