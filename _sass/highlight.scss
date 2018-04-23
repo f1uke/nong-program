@@ -1,9 +1,8 @@
 .language-javascript {
-  margin-top: 20px;
   position: relative;
   .runner {
-    width: 24px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -14,29 +13,26 @@
     color: white;
     position: absolute;
     z-index: 25;
-    font-size: .8rem;
+    opacity: .8;
   }
   .runner.fa-play {
-    left: 0;
+    right: calc(35px * 2);
     background-color: #00d1b2;
   }
   .runner.fa-code {
+    right: 35px;
     background-color: #3273dc;
-    left: 1.5rem;
   }
   .runner.fa-copy {
+    right: 0;
     background-color: #909090;
-    left: 3rem;
   }
   .runner:hover {
     cursor: pointer;
   }
-  pre.highlight {
-    padding-top: 35px;
-  }
 }
 .highlighter-rouge {
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 pre.highlight {
   border-top: 7px solid #cecece;

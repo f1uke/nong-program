@@ -9,6 +9,8 @@
     url: code-structure
   - title: Variables
     url: variables
+  - title: Data Types
+    url: data-types
 
 - title: JavaScript 101
   url: javascript-101
