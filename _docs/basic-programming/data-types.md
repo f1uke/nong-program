@@ -2,8 +2,8 @@
 title: Data Types
 subtitle: ทำความเข้าใจกับ <strong>ประเภทข้อมูลของตัวแปร</strong>
 icon: fas fa-boxes
-difficulty: 2
-duration: 3
+difficulty: 3
+duration: 4
 useful: 4
 ---
 

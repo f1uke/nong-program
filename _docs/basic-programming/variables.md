@@ -4,7 +4,7 @@ subtitle: การใช้งาน <strong>ตัวแปร</strong> ใน
 icon: fas fa-superscript
 difficulty: 1
 duration: 2
-useful: 4
+useful: 3
 ---
 
 ## ตัวแปร

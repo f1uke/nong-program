@@ -11,6 +11,8 @@
     url: variables
   - title: Data Types
     url: data-types
+  - title: Operators
+    url: operators
 
 - title: JavaScript 101
   url: javascript-101
