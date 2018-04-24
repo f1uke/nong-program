@@ -35,10 +35,17 @@
   margin: 20px 0;
 }
 pre.highlight {
-  border-top: 7px solid #cecece;
+  border-top-width: 7px;
+  border-top-style: solid;
   border-radius: 4px;
   color: #f8f8f2;
   background-color: #49483e;
+}
+.highlighter-rouge.is-danger.language-javascript pre.highlight {
+  border-top-color: #ff5239;
+}
+.highlighter-rouge pre.highlight {
+  border-top-color: #cecece;
 }
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }

@@ -51,6 +51,7 @@ alert(message); // แสดงผล message
 > let Message = 'Hello World!'; // (M)essage
 > alert(message); // (m)essage
 > ```
+> {:.is-danger}
 >
 > จะพบว่ามี Error เตือนว่า `message is not defined` ตามที่แปลได้ตรงๆ คือ message ไม่ได้ถูกกำหนดค่าไว้ ดังนั้นจึงต้องเปลี่ยนเป็นพิมพ์เล็ก-ใหญ่ให้ถูกต้องด้วย
 {:.is-warning}
@@ -60,6 +61,7 @@ alert(message); // แสดงผล message
 > ```javascript
 > let let = 'Let me gooo!'; // ใช้ let ไม่ได้เพราะซ้ำกับคำสั่ง JS
 > ```
+> {:.is-danger}
 >
 > จะพบว่ามี Error เตือนว่า `Unexpected strict mode reserved word` เนื่องจากเป็นคำสงวนที่ซ้ำกับคำสั่งบน JavaScript โดยนอกจากนั้นยังมีตัวแปรอื่นๆที่ไม่สามารถตั้งชื่อได้ เช่น ไม่สามารถนำตัวเลขขึ้นนำหน้าชื่อตัวแปรได้ ไม่สามารถใช้เครื่องหมายพิเศษได้
 >
@@ -67,6 +69,7 @@ alert(message); // แสดงผล message
 > let 123Hi = '123, Hi!'; // ใช้ไม่ได้ เพราะขึ้นต้นด้วยตัวเลข
 > alert(123Hi);
 > ```
+> {:.is-danger}
 >
 > ```javascript
 > let Hi123 = '123, Hi!'; // ใช้ได้ เพียงแค่ห้ามขึ้นต้นด้วยตัวเลขเท่านั้น
@@ -77,10 +80,11 @@ alert(message); // แสดงผล message
 > let message-me = 'My name is program'; // ใช้ไม่ได้ เพราะมีเครื่องหมายพิเศษ
 > alert(Hi123);
 > ```
+> {:.is-danger}
 >
 > ```javascript
 > let message_me = 'My name is program'; // ใช้ได้ โดยการใช้เครื่องหมาย _ (Underscore) แทนซึ่งไม่จัดว่าเป็นเครื่องหมายพิเศษของโปรแกรม
-> alert(Hi123);
+> alert(message_me);
 > ```
 {:.is-warning}
 
@@ -147,6 +151,7 @@ const birthday = '19/09/1999';
 const birthday = '19/09/1999';
 birthday = '10/10/2010';
 ```
+{:.is-danger}
 
 และตัวแปร `birthday` ก็จะไม่สามารถถูกประกาศตัวแปรใหม่อีกครั้งได้ โดยจะมี Error ว่า `Identifier 'birthday' has already been declared`
 
@@ -154,6 +159,7 @@ birthday = '10/10/2010';
 const birthday = '19/09/1999';
 let birthday = '10/10/2010';
 ```
+{:.is-danger}
 
 > **หมายเหตุ:** การใช้งานของ `const` จะเป็นลักษณะกำหนดคุณสมบัติบางอย่างที่เราไม่ต้องการให้เปลี่ยนแปลง โดยส่วนมากมักใช้ Uppercase หรือตัวพิมพ์ใหญ่ล้วน เพื่อกันความสับสนของตัวแปร เช่น `const BIRTHDAY = '19/09/1999'`
 
