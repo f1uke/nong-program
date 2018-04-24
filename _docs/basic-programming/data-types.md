@@ -4,6 +4,7 @@ subtitle: ทำความเข้าใจกับ <strong>ประเภ�
 icon: fas fa-boxes
 difficulty: 2
 duration: 3
+useful: 4
 ---
 
 ## Number

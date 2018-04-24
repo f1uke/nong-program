@@ -47,9 +47,22 @@ layout: default
               <span class="icon is-small"><i class="fas fa-clock"></i></span>
               <span>เวลาเรียน</span>
             </span>
-            <span class="tag is-primary">
+            <span class="tag is-warning">
               {% for i in (1..page.duration) %}
                 <i class="fas fa-bolt badge-level"></i>
+              {% endfor %}
+            </span>
+          </div>
+        </div>
+        <div class="control">
+          <div class="tags has-addons">
+            <span class="tag">
+              <span class="icon is-small"><i class="fas fa-graduation-cap"></i></span>
+              <span>มีคุณค่า</span>
+            </span>
+            <span class="tag is-success">
+              {% for i in (1..page.useful) %}
+                <i class="fas fa-check-circle badge-level"></i>
               {% endfor %}
             </span>
           </div>

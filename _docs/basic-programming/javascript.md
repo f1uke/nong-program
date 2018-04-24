@@ -4,6 +4,7 @@ subtitle: ทำความรู้จักกับภาษา <strong>Java
 icon: fab fa-js-square
 difficulty: 1
 duration: 1
+useful: 2
 ---
 
 ## JavaScript คืออะไร

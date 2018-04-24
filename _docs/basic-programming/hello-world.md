@@ -4,6 +4,7 @@ subtitle: เรามา <strong>สวัสดีชาวโลก</strong> 
 icon: fas fa-hand-peace
 difficulty: 1
 duration: 1
+useful: 1
 ---
 
 ## การแสดงผล
