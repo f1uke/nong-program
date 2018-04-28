@@ -19,6 +19,8 @@
     url: interactions
   - title: Conditional
     url: conditional
+  - title: Logical Operators
+    url: logical-operators
 
 - title: JavaScript 101
   url: javascript-101
