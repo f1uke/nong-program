@@ -13,6 +13,8 @@
     url: data-types
   - title: Operators
     url: operators
+  - title: Comparisons
+    url: comparisons
 
 - title: JavaScript 101
   url: javascript-101
