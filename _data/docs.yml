@@ -15,6 +15,8 @@
     url: operators
   - title: Comparisons
     url: comparisons
+  - title: Interactions
+    url: interactions
 
 - title: JavaScript 101
   url: javascript-101
