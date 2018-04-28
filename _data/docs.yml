@@ -17,6 +17,8 @@
     url: comparisons
   - title: Interactions
     url: interactions
+  - title: Conditional
+    url: conditional
 
 - title: JavaScript 101
   url: javascript-101
