@@ -21,6 +21,8 @@
     url: conditional
   - title: Logical Operators
     url: logical-operators
+  - title: Loops
+    url: loops
 
 - title: JavaScript 101
   url: javascript-101
