@@ -253,19 +253,19 @@ let input = prompt(`
   D) 10
 `);
 switch (input) {
-  case 'A':
+  case 'A': // input == 'A'
     alert('Wrong!');
     break;
-  case 'B':
+  case 'B': // input == 'B'
     alert('Wrong!');
     break;
-  case 'C':
+  case 'C': // input == 'C'
     alert('Correct!');
     break;
-  case 'D':
+  case 'D': // input == 'D'
     alert('Wrong!');
     break;
-  default:
+  default: // else input
     alert('Please input only (A-D) with uppercase');
     break;
 }
@@ -315,6 +315,33 @@ switch (input) {
 ```
 {:.is-danger}
 
+โดยเราสามารถทำการ Group ของ `case` ได้ ทำให้สามารถจัดรวมเงื่อนไขที่มีการทำงานซ้ำซ้อนได้
+
+```javascript
+let input = prompt(`
+  Input only A-D to answer (Uppercase)
+
+  What is 4 + 4 = ?
+  A) 1
+  B) 9
+  C) 8
+  D) 10
+`);
+switch (input) {
+  case 'A':
+  case 'B':
+  case 'D':
+    alert('Wrong!');
+    break;
+  case 'C':
+    alert('Correct!');
+    break;
+  default:
+    alert('Please input only (A-D) with uppercase');
+    break;
+}
+```
+
 และนอกจากนี้เรายังใช้เทคนิกการ `switch()` เพื่อหา `case` ที่ได้ค่าเป็น Boolean `true` ได้อีกด้วย เช่นดังตัวอย่าง
 
 ```javascript
@@ -341,13 +368,13 @@ switch (true) { // ให้ทำการตรวจสอบว่า case �
   case (age < 18): // age < 18 หากใส่ 13 เราจะได้ true == true ทำให้ถูกเงื่อนไข และทำงานตรงนี้
     alert('Teen');
     break; // ป้องกันข้ามไปทำงานอีก case และจบ Statement switch() นี้ทันที
-  case (age < 40):
+  case (age < 40): // (age < 40) == true
     alert('Adult');
     break;
-  case (age < 60):
+  case (age < 60): // (age < 60) == true
     alert('Middle-aged');
     break;
-  default:
+  default: // else
     alert('Old');
     break;
 }
