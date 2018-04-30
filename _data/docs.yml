@@ -23,9 +23,5 @@
     url: logical-operators
   - title: Loops
     url: loops
-
-- title: JavaScript 101
-  url: javascript-101
-  sub_docs:
-  - title: Syntax
-    url: syntax
+  - title: Arrays
+    url: arrays
