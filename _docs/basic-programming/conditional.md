@@ -238,6 +238,123 @@ alert(prompt('Your age?') >= 18 ? 'Adult' : 'Younger');
 
 > **หมายเหตุ:** ถึงอย่างไรการใช้ Shorthand ก็ไม่ได้จำเป็นเสมอไป วิธีการใช้ if else หลายๆครั้งอาจจะช่วยให้อ่านลำดับขั้นตอนการทำงานโปรแกรมได้ง่ายกว่า เพียงแต่เราอยากจะสอนให้ทราบกันก่อนว่าสามารถใช้วิธีเหล่านี้ได้ เพราะการเขียนโปรแกรมที่มีเงื่อนไขเล็กๆน้อยๆบ่อยครั้งจะทำให้มีความน่ารำคาญต่อการเรียก if else ทำให้การใช้ `?:` อาจจะสะดวกกว่า
 
+## switch
+
+การใช้ `switch()` จะเป็นการเรียก Statement ที่ต้องการเงื่อนไขเช่นเดียวกับ `if()` แต่จะสามารถนำตัวแปรใดตัวแปรหนึ่งมาเปรียบเทียบได้หลายครั้ง
+
+```javascript
+let input = prompt(`
+  Input only A-D to answer (Uppercase)
+
+  What is 4 + 4 = ?
+  A) 1
+  B) 9
+  C) 8
+  D) 10
+`);
+switch (input) {
+  case 'A':
+    alert('Wrong!');
+    break;
+  case 'B':
+    alert('Wrong!');
+    break;
+  case 'C':
+    alert('Correct!');
+    break;
+  case 'D':
+    alert('Wrong!');
+    break;
+  default:
+    alert('Please input only (A-D) with uppercase');
+    break;
+}
+```
+
+เราจะเห็นว่า `switch()` จะตรวจสอบจนกว่าภายใน `()` หรือก็คือค่าของ `input` จะ `==` ของ `case` โดยจะเป็น Statement อันเดียวจาก `switch() { ... }` และอื่นๆที่เป็น `case` หรือ `default` จะต้องมีการใช้ `break` เพื่อหยุด Statement ดังกล่าว โดยอาจจะอธิบายได้ดังตัวอย่างโค้ดด้านล่าง
+
+```js
+switch (variable) {
+  case: value1: // เมื่อ variable == value1
+    // code...
+    break;
+  case: value2: // เมื่อ variable == value2
+    // code...
+    break;
+  default: // เมื่อ variable เป็นค่าอื่นๆ (ทำหน้าที่เหมือนกับ else)
+    // code...
+    break;
+}
+```
+
+หากไม่มีการใช้ `break` จะข้างต้น จะทำให้โปรแกรมรันทุกๆ `case` จนกว่าจะสิ้นสุดของ Statement
+
+```javascript
+let input = prompt(`
+  Input only A-D to answer (Uppercase)
+
+  What is 4 + 4 = ?
+  A) 1
+  B) 9
+  C) 8
+  D) 10
+`);
+switch (input) {
+  case 'A':
+    alert('Wrong!');
+  case 'B':
+    alert('Wrong!');
+  case 'C': // หากใส่ C เช่นเดิม โปรแกรมจะทำงานตั้งแต่ขั้นตอนนี้
+    alert('Correct!');
+    // หากมี break; ตรงนี้ โปรแกรมจะจบตรงนี้
+  case 'D':
+    alert('Wrong!');
+  default:
+    alert('Please input only (A-D) with uppercase'); // หากไม่มี break; ที่ case ใดๆเลย โปรแกรมจะจบตรงนี้
+}
+```
+{:.is-danger}
+
+และนอกจากนี้เรายังใช้เทคนิกการ `switch()` เพื่อหา `case` ที่ได้ค่าเป็น Boolean `true` ได้อีกด้วย เช่นดังตัวอย่าง
+
+```javascript
+let age = prompt('Input your age');
+if (age < 12) {
+  alert('Child');
+} else if (age < 18) {
+  alert('Teen');
+} else if (age < 40) {
+  alert('Adult');
+} else if (age < 60) {
+  alert('Middle-aged');
+} else {
+  alert('Old');
+}
+```
+
+```javascript
+let age = prompt('Input your age');
+switch (true) { // ให้ทำการตรวจสอบว่า case ใดๆจะ == true
+  case (age < 12): // age < 12 หากใส่ 8 เราจะได้ true == true หากใส่ 13 เราจะได้ true == false ทำให้ไม่ถูกเงื่อนไข
+    alert('Child');
+    break;
+  case (age < 18): // age < 18 หากใส่ 13 เราจะได้ true == true ทำให้ถูกเงื่อนไข และทำงานตรงนี้
+    alert('Teen');
+    break; // ป้องกันข้ามไปทำงานอีก case และจบ Statement switch() นี้ทันที
+  case (age < 40):
+    alert('Adult');
+    break;
+  case (age < 60):
+    alert('Middle-aged');
+    break;
+  default:
+    alert('Old');
+    break;
+}
+```
+
+> **หมายเหตุ:** เนื่องจากการใช้ `switch()` อาจจะยาก ดังนั้นการใช้แต่เพียง `if()` ก็สามารถทำได้หากในกรณีที่เกิดความสับสน แต่ `switch()` ก็จะมีประโยชน์ในบางครั้งที่ทำให้การอ่านโปรแกรมเข้าใจได้ง่ายกว่า
+
 ## บทสรุป
 
 - `if()` จะทำงานเมื่อเงื่อนไขเป็นจริง
@@ -246,3 +363,4 @@ alert(prompt('Your age?') >= 18 ? 'Adult' : 'Younger');
   - `else if()` และ `else` เป็นเพียงทางเลือกเสริม ไม่ได้จำเป็นในการเขียนเงื่อนไข
 - Code block การทำงานของช่วงใน Statement
 - Shorthand กับการใช้ `?:` เพื่อให้เขียนเงื่อนไขสั้นลง
+- `switch()` จะตรวจสอบเงื่อนไขภายใน `()` ว่าเท่ากับ `case` ใดๆหรือไม่
