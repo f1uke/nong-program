@@ -300,6 +300,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }).join('&');
   }
 
+  var messageCoppied = [
+    'Ctrl + C 😆',
+    'Copy is how we learning 🤓',
+    'Kopi dessu! 😊',
+    '01100011 01101111 01110000 01111001',
+    `alert('Copied');`,
+    'navigator.clipboard.writeText()',
+    'ลอง "shift + insert" ดูสิ 👍',
+    'ก็อปปี้วันนี้ เป็นโปรแกรมเมอร์ในวันหน้า 🤪',
+    'เจ็บๆๆๆ กดคัดลอกเบาๆหน่อยสิ!!! 🤕',
+    'คัดลอกได้ แต่หัดเขียนเองด้วยนะจ๊ะ! 😉',
+    'ในห้องสอบลอกใครไม่ได้ แต่โค้ดเราลอกคนอื่นได้ 🤫',
+    'หลังคัดลอก ลองเขียนเองดู สนุกเหมือนกันนะเออ 😄',
+    'ชอบลอกคนอื่นยังดีกว่าไม่ลองทำอะไรเลย 😤',
+    'คัดลอกเรียบร้อย! 😗',
+    'Copied! 😙',
+    'สำเนาข้อความแล้วนะออเจ้า 🙂',
+  ];
   var highlights = document.querySelectorAll('.language-javascript');
   if (highlights) {
     for (var highlight of highlights) {
@@ -329,6 +347,10 @@ document.addEventListener('DOMContentLoaded', function () {
           element.addEventListener('click', function (event) {
             if (getChromeVersion() >= 66) {
               navigator.clipboard.writeText(event.target.parentElement.querySelector('code').innerText);
+              new Noty({
+                text: messageCoppied[Math.floor(Math.random()*messageCoppied.length)],
+                type: 'info'
+              }).show();
             } else {
               alert('การคัดลอกข้อความจะรองรับเฉพาะบน Google Chrome เวอร์ชั่น 66 ขึ้นไป เนื่องจากเราใช้ Async Clipboard API ในการคัดลอก\n\nอ่านเพิ่มเติมที่ https://developers.google.com/web/updates/2018/04/nic66#async-clipboard');
             }
