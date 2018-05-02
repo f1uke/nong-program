@@ -61,11 +61,13 @@ useful: 2
 
 - สำหรับ Google Chrome
 
-{% message danger | Uncaught ReferenceError: Hello is not defined %}
+> Uncaught ReferenceError: Hello is not defined
+{:.is-danger}
 
 - สำหรับ Mozilla Firefox
 
-{% message danger | ReferenceError: Hello is not defined[Learn More] %}
+> ReferenceError: Hello is not defined[Learn More]
+{:.is-danger}
 
 <script>
   console.log(Hello);
