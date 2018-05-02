@@ -4,9 +4,9 @@
 
 ## วิธีการมีส่วนร่วม
 
-- สามารถร่วมเขียนบทความได้โดยทำการ [Pull Request](https://github.com/anitation/nong-program/pulls) เพื่อให้ทาง Contributors สามารถรีวิวและตอบถามความเห็นได้ก่อน
-- สามารถร่วมเขียนบทความอีกทางได้โดยการเข้าร่วมเป็นส่วนหนึ่งของ Contributors จาก [anitation](https://github.com/anitation) ได้โดยการส่งเมลพูดคุยกับเจ้าของโครงการนี้ได้ที่ `nakorndev@gmail.com` หรือ Facebook: [nakorndev](https://www.facebook.com/nakorndev)
-- สามารถร่วมแก้ไขบทความที่มีความผิดพลาด โดยไม่ต้องทำการ Pull Request โดยการเปิด [Issues](https://github.com/anitation/nong-program/issues) ใหม่ เพื่อพูดคุยกันก่อนทำการแก้ไขปัญหาของเนื้อหา
+- สามารถร่วมเขียนบทความได้โดยทำการ [Pull Request](https://github.com/nakorndev/nong-program/pulls) เพื่อให้ทาง Contributors สามารถรีวิวและตอบถามความเห็นได้ก่อน
+- สามารถร่วมเขียนบทความอีกทางได้โดยการเข้าร่วมเป็นส่วนหนึ่งของ Contributors จาก [nakorndev](https://github.com/nakorndev) ได้โดยการส่งเมลพูดคุยกับเจ้าของโครงการนี้ได้ที่ `nakorndev@gmail.com` หรือ Facebook: [nakorndev](https://www.facebook.com/nakorndev)
+- สามารถร่วมแก้ไขบทความที่มีความผิดพลาด โดยไม่ต้องทำการ Pull Request โดยการเปิด [Issues](https://github.com/nakorndev/nong-program/issues) ใหม่ เพื่อพูดคุยกันก่อนทำการแก้ไขปัญหาของเนื้อหา
 
 ## วิธีการใช้สำหรับผู้พัฒนา
 

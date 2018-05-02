@@ -1,7 +1,7 @@
 <!-- 
   ก่อนทำการ Pull Request กรุณาทำความเข้าใจ Contribute Guideline ให้เรียบร้อยก่อน
 
-  https://github.com/anitation/nong-program/blob/master/.github/CONTRIBUTING.md
+  https://github.com/nakorndev/nong-program/blob/master/.github/CONTRIBUTING.md
 
   โดยการตอบแบบตัวเลือก [ ] ให้เพิ่มเป็น [x] โดยไม่ลบอันอื่น เช่น
   - [ ] เพิ่มเนื้อหาบน `_docs`

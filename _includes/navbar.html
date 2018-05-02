@@ -46,6 +46,23 @@
           เพิ่มเติม
         </div>
         <div id="moreDropdown" class="navbar-dropdown">
+          <a class="navbar-item is-extra {% if page.url == '/editor.html' %}is-active{% endif %}" href="{{ 'editor' | absolute_url }}">
+            <div class="media">
+              <div class="media-left">
+                <span class="icon is-large has-text-link">
+                  <span class="fas fa-2x fa-code"></span>
+                </span>
+              </div>
+              <div class="media-content">
+                <p>
+                  <strong>Editor</strong>
+                  <br>
+                  <small>เขียนโปรแกรม JavaScript ผ่านเว็บไซต์เรา</small>
+                </p>
+              </div>
+            </div>
+          </a>
+          <hr class="navbar-divider">
           <a class="navbar-item " href="{{ '/' | absolute_url }}">
             <div class="media">
               <div class="media-left">
@@ -62,7 +79,6 @@
               </div>
             </div>
           </a>
-          <hr class="navbar-divider">
         </div>
       </div>
       <div class="is-hidden-desktop docs-nav-menu">

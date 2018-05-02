@@ -1,5 +1,29 @@
 - title: การเขียนโปรแกรมเบื้องต้น
   url: basic-programming
   sub_docs:
-  - title: Editor
-    url: editor
+  - title: JavaScript
+    url: javascript
+  - title: Hello World
+    url: hello-world
+  - title: Code Structure
+    url: code-structure
+  - title: Variables
+    url: variables
+  - title: Data Types
+    url: data-types
+  - title: Operators
+    url: operators
+  - title: Comparisons
+    url: comparisons
+  - title: Interactions
+    url: interactions
+  - title: Conditional
+    url: conditional
+  - title: Logical Operators
+    url: logical-operators
+  - title: Loops
+    url: loops
+  - title: Arrays
+    url: arrays
+  - title: Functions
+    url: functions

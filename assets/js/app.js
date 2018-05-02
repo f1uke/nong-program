@@ -1,5 +1,11 @@
 'use strict';
 
+Noty.overrideDefaults({
+  layout: 'topCenter',
+  theme: 'sunset',
+  timeout: 3000
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // Detech mobile
@@ -19,32 +25,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+
+  // Scrolling
+
+  var shadowedEl = document.getElementById('shadowed');
+  var navbarEl = document.getElementById('navbar');
+  var navbarBurger = document.getElementById('navbarBurger');
+  var NAVBAR_HEIGHT = 52;
+  var THRESHOLD = 160;
+  var navbarOpen = false;
+  var horizon = NAVBAR_HEIGHT;
+  var whereYouStoppedScrolling = 0;
+  var scrollFactor = 0;
+  var currentTranslate = 0;
+
+  navbarBurger.addEventListener('click', function (el) {
+    navbarOpen = !navbarOpen;
+    shadowedEl.style.display = shadowedEl.style.display == 'none' ? 'block' : 'none';
+  });
+
+
   if (detectMob()) {
-
-    // Scrolling
-
-    var shadowedEl = document.getElementById('shadowed');
-    var navbarEl = document.getElementById('navbar');
-    var navbarBurger = document.getElementById('navbarBurger');
-    var NAVBAR_HEIGHT = 52;
-    var THRESHOLD = 160;
-    var navbarOpen = false;
-    var horizon = NAVBAR_HEIGHT;
-    var whereYouStoppedScrolling = 0;
-    var scrollFactor = 0;
-    var currentTranslate = 0;
-
-    navbarBurger.addEventListener('click', function (el) {
-      navbarOpen = !navbarOpen;
-
-      if (navbarOpen) {
-        rootEl.classList.add('bd-is-clipped-touch');
-        shadowedEl.style.display = shadowedEl.style.display == 'none' ? 'block' : 'none';
-      } else {
-        rootEl.classList.remove('bd-is-clipped-touch');
-        shadowedEl.style.display = shadowedEl.style.display == 'none' ? 'block' : 'none';
-      }
-    });
 
     function upOrDown(lastY, currentY) {
       if (currentY >= lastY) {
@@ -276,6 +277,98 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
+
+  // JavaScript test script
+
+  function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim();
+    template.innerHTML = html;
+    return template.content.firstChild;
+  }
+
+  function getChromeVersion() {
+    var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+    return raw ? parseInt(raw[2], 10) : false;
+  }
+
+  function jsonToQueryString(json) {
+    return '?' +
+      Object.keys(json).map(function(key) {
+        return encodeURIComponent(key) + '=' +
+          encodeURIComponent(json[key]);
+      }).join('&');
+  }
+
+  var messageCoppied = [
+    'Ctrl + C 😆',
+    'Copy is how we learning 🤓',
+    'Kopi dessu! 😊',
+    '01100011 01101111 01110000 01111001',
+    `alert('Copied');`,
+    'navigator.clipboard.writeText()',
+    'ลอง "shift + insert" ดูสิ 👍',
+    'ก็อปปี้วันนี้ เป็นโปรแกรมเมอร์ในวันหน้า 🤪',
+    'เจ็บๆๆๆ กดคัดลอกเบาๆหน่อยสิ!!! 🤕',
+    'คัดลอกได้ แต่หัดเขียนเองด้วยนะจ๊ะ! 😉',
+    'ในห้องสอบลอกใครไม่ได้ แต่โค้ดเราลอกคนอื่นได้ 🤫',
+    'หลังคัดลอก ลองเขียนเองดู สนุกเหมือนกันนะเออ 😄',
+    'ชอบลอกคนอื่นยังดีกว่าไม่ลองทำอะไรเลย 😤',
+    'คัดลอกเรียบร้อย! 😗',
+    'Copied! 😙',
+    'สำเนาข้อความแล้วนะออเจ้า 🙂',
+  ];
+  var highlights = document.querySelectorAll('.language-javascript');
+  if (highlights) {
+    for (var highlight of highlights) {
+      highlight.prepend(htmlToElement(`<i title="Run a code" class="runner fas fa-play"></i>`));
+      highlight.prepend(htmlToElement(`<i title="Open in editor" class="runner fas fa-code"></i>`));
+      highlight.prepend(htmlToElement(`<i title="Copy a code" class="runner fas fa-copy"></i>`));
+      [].filter.call(highlight.children, element => {
+        if (element.classList.contains('fa-play')) {
+          element.addEventListener('click', function (event) {
+            try {
+              eval(event.target.parentElement.querySelector('code').innerText);
+            } catch (e) {
+              new Noty({
+                text: e.message,
+                type: 'error'
+              }).show();
+            }
+          });
+        }
+        if (element.classList.contains('fa-code')) {
+          element.addEventListener('click', function (event) {
+            var win = window.open(`/nong-program/editor${jsonToQueryString({ value: event.target.parentElement.querySelector('code').innerText })}`, '_blank');
+            win.focus();
+          });
+        }
+        if (element.classList.contains('fa-copy')) {
+          element.addEventListener('click', function (event) {
+            if (getChromeVersion() >= 66) {
+              navigator.clipboard.writeText(event.target.parentElement.querySelector('code').innerText);
+              new Noty({
+                text: messageCoppied[Math.floor(Math.random()*messageCoppied.length)],
+                type: 'info'
+              }).show();
+            } else {
+              alert('การคัดลอกข้อความจะรองรับเฉพาะบน Google Chrome เวอร์ชั่น 66 ขึ้นไป เนื่องจากเราใช้ Async Clipboard API ในการคัดลอก\n\nอ่านเพิ่มเติมที่ https://developers.google.com/web/updates/2018/04/nic66#async-clipboard');
+            }
+          });
+        }
+      });
+    }
+  }
+
+  // Tippy.js
+
+  tippy('[title]', {
+    animation: 'perspective',
+    distance: 5,
+    duration: [150, 150],
+    dynamicTitle: true
+  });
+
 });
 
 // Offset navbar

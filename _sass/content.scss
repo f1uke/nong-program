@@ -14,11 +14,18 @@
   }
 }
 
+.badge-level:not(:last-child) {
+  margin-right: 3px;
+}
+
 .menu.is-docs {
   p.menu-label {
     font-size: 1rem;
     letter-spacing: inherit;
     text-transform: inherit;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
   }
 }
 
@@ -45,12 +52,56 @@
     margin: 0 auto;
     padding-top: 10px;
   }
-  code {
-    background-color: #49483e;
-    color: #ffffff;
-    border-radius: 3px;
+  code.highlighter-rouge {
     white-space: nowrap;
     padding: 3px 8px;
+    background-color: #49483e;
+    color: #f8f8f2;
+    border-radius: 2px;
+  }
+  %quote-color {
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 4px;
+  }
+  blockquote:not([class]) {
+    @extend %quote-color;
+    background-color: aliceblue;
+    border-left-color: #3273dc;
+    color: #12537e;
+    strong {
+      color: #12537e;
+    }
+  }
+  blockquote.is-danger {
+    @extend %quote-color;
+    background-color: #fff5f7;
+    border-left-color: #ff3860;
+    color: #cd0930;
+    strong {
+      color: #cd0930;
+    }
+  }
+  blockquote.is-warning {
+    @extend %quote-color;
+    background-color: #fffdf5;
+    border-left-color: #ffdd57;
+    color: #3b3108;
+    strong {
+      color: #3b3108;
+    }
+  }
+  blockquote.is-success {
+    @extend %quote-color;
+    background-color: #f6fef9;
+    border-left-color: #23d160;
+    color: #0e301a;
+    strong {
+      color: #0e301a;
+    }
+  }
+  blockquote.is-light {
+    @extend %quote-color;
   }
 }
 

@@ -13,11 +13,15 @@
     {% endif %}
   </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/{{ site.version.bulma }}/css/bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v{{ site.version.fontawesome }}/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/{{ site.version.tippyjs }}/tippy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/{{ site.version.noty }}/noty.min.css">
   <link rel="stylesheet" href="{{ 'assets/css/app.css' | absolute_url }}">
   <link rel="shortcut icon" type="image/png" href="{{ 'assets/favicon/16x16.png' | absolute_url }}" sizes="16x16"/>
   <link rel="shortcut icon" type="image/png" href="{{ 'assets/favicon/32x32.png' | absolute_url }}" sizes="32x32"/>
-  <script defer src="https://use.fontawesome.com/releases/v{{ site.version.fontawesome }}/js/all.js"></script>
   <link rel="manifest" href="{{ 'manifest.json' | absolute_url }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/{{ site.version.tippyjs }}/tippy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/{{ site.version.noty }}/noty.min.js"></script>
 </head>
 <body>
   <div id="shadowed" style="display: none;"></div>

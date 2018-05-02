@@ -1,0 +1,75 @@
+---
+layout: default
+title: Editor
+---
+
+<div id="monaco-control">
+  <div class="field is-grouped is-grouped-multiline">
+    <div class="control">
+      <div id="monaco-run" class="button is-primary">
+        <span class="icon"><i class="fas fa-play"></i></span>
+        <span>Run a code</span>
+      </div>
+    </div>
+    <div class="control">
+      <a href="https://github.com/Microsoft/monaco-editor">
+        <div class="tags has-addons">
+          <span class="tag is-link">Editor</span>
+          <span class="tag is-dark">Monaco v0.12.0</span>
+        </div>
+      </a>
+    </div>
+    <div class="control">
+      <div class="tags has-addons">
+        <span class="tag is-info">Language</span>
+        <span class="tag is-dark">JavaScript</span>
+      </div>
+    </div>
+    <div class="control">
+      <div class="tags has-addons">
+        <span class="tag is-info">Theme</span>
+        <span class="tag is-dark">vs-dark</span>
+      </div>
+    </div>
+    <div class="control">
+      <div class="tags has-addons">
+        <span class="tag is-danger">Mobile Support</span>
+        <span class="tag is-dark">No</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="monaco"></div>
+<script src="{{ 'assets/monaco/min/vs/loader.js' | absolute_url }}"></script>
+<script>
+  require.config({ paths: { 'vs': '{{ "assets/monaco/min/vs" | absolute_url }}' }});
+  require(['vs/editor/editor.main'], function() {
+    var params = new URL(window.location).searchParams;
+    const defaultValue = `function sayHello(name) {
+  return alert('Hello, ' + name);
+}
+
+sayHello('nong-program');`;
+    var value = params.get('value') || defaultValue;
+
+    window._editor = monaco.editor.create(document.getElementById('monaco'), {
+      language: 'javascript',
+      theme: 'vs-dark',
+      fontSize: 18,
+      value: value
+    });
+    window.onresize = function() {
+			window._editor.layout();
+		};
+  });
+  document.getElementById('monaco-run').addEventListener('click', function () {
+    try {
+      eval(window._editor.getValue());
+    } catch (e) {
+      new Noty({
+        text: e.message,
+        type: 'error'
+      }).show();
+    }
+  });
+</script>
