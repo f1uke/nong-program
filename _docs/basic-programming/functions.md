@@ -86,3 +86,53 @@ let input = prompt('Input between 0 - 2 to get their name');
 let output = getName(input);
 alert(output);
 ```
+
+## Scope
+
+**Scope** คือการที่ตัวแปรจะสามารถเข้าถึงกับตัวแปรอื่นๆได้อย่างไร โดยแบ่งเป็น 2 หมวดย่อยๆคือ **Local** กับ **Global**
+
+> **ยกตัวอย่าง:** ข่าวระดับโลก (Global) เช่น เศรษฐกิจโลก ภัยพิบัติ สงคราม จะมีผู้คนสามารถเข้าถึงได้มากกว่าและรับรู้ทุกที่ ในขณะที่ข่าวท้องถิ่น (Local) เช่น เศรษฐกิจท้องถิ่น ฟ้าอากาศประจำจังหวัด ข่าวรถชนกัน อาจจะรับรู้ได้เพียงชุมชนในบริเวณนั้นเท่านั้น
+
+กล่าวคือตัวแปรที่อยู่ภายใน Local โปรแกรมจะนำมาใช้ได้เพียง Scope ของ Block statement นั้นๆ ไม่สามารถออกนอก Statement ได้ เช่น
+
+```javascript
+function showName() {     // \
+  let name = 'John Doe';  //  | ตัวแปร name = 'John Doe' เป็น Local
+  alert(name);            //  | โดยจาก Scope จะรู้จักแค่ภายใน Statement ของฟังก์ชั่นนี้
+}                         // /
+
+showName(); // alert('John Doe');
+alert(name); // alert(); ไม่มีค่า เพราะ name รู้จักแค่ภายใน Local ของ showName()
+```
+
+ขณะที่ตัวแปรที่อยู่ด้านนอก (Global) จะทำให้ฟังก์ชั่นอื่นๆที่เป็น Local สามารถเรียกใช้ได้
+
+```javascript
+let name = 'John Doe';              // \
+                                    //  |
+function showName() {               //  |
+  alert(name);                      //  | ตัวแปร name = 'John Doe' เป็น Global
+}                                   //  | ทำให้ใน Scope ทั้งหมดรู้จักตัวแปร name
+                                    //  |
+showName(); // alert('John Doe');   //  |
+alert(name); // alert('John Doe');  // /
+```
+
+โดยการทำความเข้าใจกับ Scope อาจจะค่อนข้างยาก เพราะยังมีการ **Override (ทับข้อมูล)** ของตัวแปร ทำให้ตัวแปรเดิมที่อาจจะทำงานเป็น Global ถูกเปลี่ยนเป็นใช้เฉพาะภายใน Local นั้นๆด้วยชื่อตัวแปรเดียวกันได้ เนื่องจากภายใน Local จะพยายามหาตัวแปรของ Local ด้วยกันเองก่อน หากไม่มีจึงจะหาตัวแปรจาก Global อีกที ในกรณีที่ไม่พบทั้งสองตัวจะทำให้เป็น undefined หรือไม่มีข้อความ
+
+```javascript
+let name = 'John Doe'; // กำหนด Global: name = 'John Doe'
+
+function showName() {
+  let name = 'Nakorn Sinpadung'; // กำหนด Local: name = 'Nakorn Sinpadung'
+  alert(name); // แสดงบน Local ถ้าไม่มีแสดงบน Global
+}
+
+showName(); // เรียกฟังก์ชั่น
+alert(name); // แสดงบน Global
+
+name = 'Jane Dee'; // เปลี่ยนค่าบน Global
+
+showName(); // เรียกฟังก์ชั่น ได้ค่าบน Local
+alert(name); // แสดงบน Global ได้ค่าบน Global
+```
