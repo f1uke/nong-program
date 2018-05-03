@@ -14,6 +14,15 @@
   }
 }
 
+.badge-empty {
+  font-size: .25rem;
+  padding: .15rem;
+}
+
+.badge-level {
+  width: 12px;
+}
+
 .badge-level:not(:last-child) {
   margin-right: 3px;
 }
