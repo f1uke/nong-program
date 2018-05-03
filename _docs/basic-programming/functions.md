@@ -150,7 +150,7 @@ alert(name); // แสดงบน Global ได้ค่าบน Global
 
 ## บทสรุป
 
-```javascript
+```js
 function nameIt(param, anotherParam) {
   // code here...
 }

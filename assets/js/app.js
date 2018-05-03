@@ -2,8 +2,8 @@
 
 Noty.overrideDefaults({
   layout: 'topCenter',
-  theme: 'sunset',
-  timeout: 3000
+  theme: 'bootstrap-v4',
+  timeout: 5000
 });
 
 document.addEventListener('DOMContentLoaded', function () {
