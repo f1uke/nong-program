@@ -11,7 +11,10 @@ url: https://nakorndev.github.io
 exclude: [
   assets/images/_achieve/*,
   _docs/_achieve/*,
-  vendor
+  vendor,
+  script,
+  Gemfile,
+  Gemfile.lock
 ]
 
 markdown: kramdown
@@ -42,9 +45,8 @@ collections:
   news:
     permalink: /news/:year/:month/:day/:title
     output: true
-  awesome:
-    permalink: /awesome/:path/
-    output: true
+  examples:
+    permalink: /examples/:path/
 
 defaults:
   - scope:
@@ -59,3 +61,9 @@ defaults:
     values:
       layout: doc
       is_doc: true
+  - scope:
+      path: _examples
+      type: examples
+    values:
+      layout: example
+      is_example: true
