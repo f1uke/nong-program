@@ -4,7 +4,7 @@ subtitle: ทำความรู้จักกับภาษา <strong>Java
 icon: fab fa-js-square
 difficulty: 1
 duration: 1
-useful: 2
+useful: 4
 ---
 
 ![JavaScript]({{ 'assets/images/docs/javascript.gif' | absolute_url }})
