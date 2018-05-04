@@ -5,7 +5,15 @@ title: Example
 
 <section class="section">
   <div class="container">
-    Hello programmer
+    {% for example in site.examples %}
+      <a href="{{ example.url | absolute_url }}">
+        <article class="media">
+          <div class="media-content">
+            {{ example.title }}
+          </div>
+        </article>
+      </a>
+    {% endfor %}
   </div>
 </section>
 

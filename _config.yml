@@ -47,6 +47,7 @@ collections:
     output: true
   examples:
     permalink: /examples/:path/
+    output: true
 
 defaults:
   - scope:
