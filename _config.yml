@@ -29,7 +29,6 @@ navigation:
   facebook: 777742965747869
   patreon: bePatron?c=1655061
 
-paginate: 5
 excerpt_separator: <!--more-->
 date_format: '%B %d, %Y'
 
@@ -58,17 +57,5 @@ defaults:
       path: _docs
       type: docs
     values:
-      layout: docs
+      layout: doc
       is_docs: true
-  - scope:
-      path: _news
-      type: news
-    values:
-      layout: news
-      is_news: true
-  - scope:
-      path: _awesome
-      type: awesome
-    values:
-      layout: awesome
-      is_extra: true
