@@ -360,6 +360,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Add line for highlight
+
+  var elementsCode = document.querySelectorAll('pre.highlight');
+  for (var code of elementsCode) {
+    var lineCount = code.innerText.split(/\r\n|\r|\n/).length - 1;
+    var html = '<div class="editor lines"><ul class="line">';
+    for (var i = 0; i < lineCount; i++) {
+      html += `<li class="no">${i + 1}</li>`;
+    }
+    html += '</ul></div>';
+    code.prepend(htmlToElement(html));
+  }
+
   // Tippy.js
 
   tippy('[title]', {
