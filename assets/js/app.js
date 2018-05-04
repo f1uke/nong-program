@@ -388,7 +388,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   gumshoe.init({
     selector: '#desktop-sidebar [data-gumshoe] a',
-    activeClass: 'is-active'
+    activeClass: 'is-active',
+    offset: 63
   });
 
 });
