@@ -33,7 +33,7 @@
           <span>สนับสนุนเรา</span>
         </a>
       {% endif %}
-      <a class="navbar-item {% if page.is_docs %}is-active{% endif %}" href="{{ '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
+      <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
         <span class="icon is-medium has-text-success"><i class="fas fa-book"></i></span>
         <span>เริ่มเรียน</span>
       </a>

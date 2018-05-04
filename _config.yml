@@ -58,4 +58,4 @@ defaults:
       type: docs
     values:
       layout: doc
-      is_docs: true
+      is_doc: true
