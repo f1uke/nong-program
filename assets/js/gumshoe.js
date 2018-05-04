@@ -210,14 +210,11 @@
 
 		// Get all navigation links
     var navLinks = document.querySelectorAll( settings.selector );
-    console.log(settings.selector);
-    console.log(Array.from(navLinks).map(el => { return el.href }));
 
 		// For each link, create an object of attributes and push to an array
 		forEach( navLinks, (function (nav) {
 			if ( !nav.hash ) return;
       var target = document.querySelector( `[id="${decodeURIComponent(nav.hash.replace('#', ''))}"]` );
-      console.log(target);
 			if ( !target ) return;
 			navs.push({
 				nav: nav,

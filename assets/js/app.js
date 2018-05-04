@@ -318,11 +318,13 @@ document.addEventListener('DOMContentLoaded', function () {
     'Copied! 😙',
     'สำเนาข้อความแล้วนะออเจ้า 🙂',
   ];
-  var highlights = document.querySelectorAll('.language-javascript');
+  var highlights = document.querySelectorAll('div.highlighter-rouge');
   if (highlights) {
     for (var highlight of highlights) {
-      highlight.prepend(htmlToElement(`<i title="Run a code" class="runner fas fa-play"></i>`));
-      highlight.prepend(htmlToElement(`<i title="Open in editor" class="runner fas fa-code"></i>`));
+      if (highlight.classList.contains('language-javascript')) {
+        highlight.prepend(htmlToElement(`<i title="Run a code" class="runner fas fa-play"></i>`));
+        highlight.prepend(htmlToElement(`<i title="Open in editor" class="runner fas fa-code"></i>`));
+      }
       highlight.prepend(htmlToElement(`<i title="Copy a code" class="runner fas fa-copy"></i>`));
       [].filter.call(highlight.children, element => {
         if (element.classList.contains('fa-play')) {
