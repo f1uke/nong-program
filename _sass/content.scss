@@ -14,6 +14,15 @@
   }
 }
 
+.badge-empty {
+  font-size: .25rem;
+  padding: .15rem;
+}
+
+.badge-level {
+  width: 12px;
+}
+
 .badge-level:not(:last-child) {
   margin-right: 3px;
 }
@@ -23,7 +32,6 @@
     font-size: 1rem;
     letter-spacing: inherit;
     text-transform: inherit;
-    border-bottom: 1px solid gainsboro;
     padding-bottom: .5em;
     margin-bottom: .5em;
   }

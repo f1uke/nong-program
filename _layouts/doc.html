@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="is-hidden-touch">
+<div id="desktop-sidebar" class="is-hidden-touch">
   {% include docs_sidebar.html %}
 </div>
 <section class="section is-docs">
@@ -38,6 +38,10 @@ layout: default
               {% for i in (1..page.difficulty) %}
                 <i class="fab fa-hotjar badge-level"></i>
               {% endfor %}
+              {% assign difficulty_outer = 5 | minus: page.difficulty %}
+              {% for i in (1..difficulty_outer) %}
+                <i class="fas fa-circle badge-level badge-empty"></i>
+              {% endfor %}
             </span>
           </div>
         </div>
@@ -51,6 +55,10 @@ layout: default
               {% for i in (1..page.duration) %}
                 <i class="fas fa-bolt badge-level"></i>
               {% endfor %}
+              {% assign duration_outer = 5 | minus: page.duration %}
+              {% for i in (1..duration_outer) %}
+                <i class="fas fa-circle badge-level badge-empty"></i>
+              {% endfor %}
             </span>
           </div>
         </div>
@@ -63,6 +71,10 @@ layout: default
             <span class="tag is-success">
               {% for i in (1..page.useful) %}
                 <i class="fas fa-check-circle badge-level"></i>
+              {% endfor %}
+              {% assign useful_outer = 5 | minus: page.useful %}
+              {% for i in (1..useful_outer) %}
+                <i class="fas fa-circle badge-level badge-empty"></i>
               {% endfor %}
             </span>
           </div>
