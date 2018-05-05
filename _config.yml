@@ -2,24 +2,24 @@ name: น้องโปรแกรม
 title: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
 description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub.com สำหรับผู้ที่ต้องการเริ่มแบบง่ายๆ รวดเร็ว และมีการสอนใช้เครื่องมือที่ทันสมัยกว่า
 repository: https://github.com/nakorndev/nong-program
-timezone: Asia/Bangkok
-lang: th
-email: nakorndev@gmail.com
-baseurl: /nong-program
 url: https://nakorndev.github.io
+baseurl: /nong-program
 
-exclude: [
-  assets/images/_achieve/*,
-  _docs/_achieve/*,
-  vendor,
-  script,
-  Gemfile,
-  Gemfile.lock
-]
-
-markdown: kramdown
-plugins:
-  - jekyll-feed
+author: nakorndev
+email: nakorndev@gmail.com
+twitter:
+  username: nakorndev
+facebook:
+  publisher: 1944714005562794
+logo: /assets/icons/source.png
+social:
+  name: พี่บอล สอนโปรแกรมแบบโง่ๆ
+  links:
+    - https://twitter.com/nakorndev
+    - https://www.facebook.com/1944714005562794
+    - https://github.com/nakorndev
+    - https://www.patreon.com/bePatron?c=1655061
+google_site_verification: googlef0a40959beb7e3a0
 
 version:
   bulma: 0.7.0
@@ -29,9 +29,12 @@ version:
 
 navigation:
   github: nakorndev/nong-program
-  facebook: 777742965747869
+  facebook: 1944714005562794
   patreon: bePatron?c=1655061
 
+timezone: Asia/Bangkok
+lang: th_TH
+markdown: kramdown
 excerpt_separator: <!--more-->
 date_format: '%B %d, %Y'
 
@@ -68,3 +71,12 @@ defaults:
     values:
       layout: example
       is_example: true
+
+exclude: [
+  assets/images/_achieve/*,
+  _docs/_achieve/*,
+  vendor,
+  script,
+  Gemfile,
+  Gemfile.lock
+]
