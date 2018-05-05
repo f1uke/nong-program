@@ -41,6 +41,15 @@ date_format: '%B %d, %Y'
 sass:
   style: compressed
 
+plugins:
+  - github-pages
+  - jekyll-feed
+  - jekyll-compose
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-sitemap
+  - jekyll-admin
+
 collections:
   docs:
     permalink: /docs/:path/
