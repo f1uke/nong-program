@@ -1,19 +1,94 @@
 ---
 layout: default
 title: Example
+is_example: true
 ---
 
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="media">
+        <div class="media-left">
+          <a class="non-blank" href="{{ 'examples' | absolute_url }}">
+            <span class="is-heading">
+              🚀
+            </span>
+          </a>
+        </div>
+        <div class="media-body">
+          <div class="title">
+            Examples
+          </div>
+          <div class="subtitle">
+            ค้นหา <strong>ตัวอย่าง</strong> ของโปรแกรมต่างๆมากมายจากเว็บไซต์เรา
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="box breadcrumb is-radiusless">
+  <div class="container">
+    <ul>
+      <li>ตัวอย่างโปรแกรม</li>
+    </ul>
+  </div>
+</div>
 <section class="section">
   <div class="container">
-    {% for example in site.examples %}
-      <a href="{{ example.url | absolute_url }}">
-        <article class="media">
-          <div class="media-content">
-            {{ example.title }}
-          </div>
-        </article>
-      </a>
-    {% endfor %}
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th class="is-dark">ภาษาโปรแกรม</th>
+          <th class="is-dark">ชื่อตัวอย่างโปรแกรม</th>
+          <th class="is-dark">ผู้เขียน</th>
+          <th class="is-dark">ความยาก</th>
+          <th class="is-dark">เขียนวันที่</th>
+          <th class="is-dark"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for example in site.examples %}
+          <tr>
+            <td>
+              <span class="tag is-link">{{ example.language }}</span>
+            </td>
+            <td>
+              <a href="{{ example.url | absolute_url }}">
+                <article class="media">
+                  <div class="media-content">
+                    {{ example.title }}
+                  </div>
+                </article>
+              </a>
+            </td>
+            <td>
+              <a href="{{ example.author.url }}">{{ example.author.name }}</a>
+            </td>
+            <td>
+              <span class="tag is-danger">
+                {% for i in (1..example.level) %}
+                  <i class="fab fa-hotjar badge-level"></i>
+                {% endfor %}
+                {% assign level_outer = 5 | minus: example.level %}
+                {% for i in (1..level_outer) %}
+                  <i class="fas fa-circle badge-level badge-empty"></i>
+                {% endfor %}
+              </span>
+            </td>
+            <td>
+              {{ example.date | date_to_long_string }}
+            </td>
+            <td>
+              <a href="{{ example.url | absolute_url }}" class="button is-small">
+                ดูโปรแกรม
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 

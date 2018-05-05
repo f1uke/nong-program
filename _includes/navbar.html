@@ -29,17 +29,15 @@
     <div class="navbar-start">
       {% if site.navigation.patreon %}
         <a class="navbar-item is-hidden-desktop text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
-          <span class="icon is-medium"><i class="fab fa-patreon"></i></span>
+          <span class="icon"><i class="fab fa-patreon"></i></span>
           <span>สนับสนุนเรา</span>
         </a>
       {% endif %}
-      <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
-        <span class="icon is-medium has-text-success"><i class="fas fa-book"></i></span>
-        <span>เริ่มเรียน</span>
+      <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ 'docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
+        📚 เริ่มเรียน
       </a>
-      <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ '/' | absolute_url }}">
-        <span class="icon is-medium has-text-danger"><i class="fas fa-newspaper"></i></span>
-        <span>ข่าวสาร</span>
+      <a class="navbar-item {% if page.is_example %}is-active{% endif %}" href="{{ 'examples' | absolute_url }}">
+        🚀 ตัวอย่าง
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
         <div class="navbar-link">

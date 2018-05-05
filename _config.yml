@@ -54,9 +54,6 @@ collections:
   docs:
     permalink: /docs/:path/
     output: true
-  news:
-    permalink: /news/:year/:month/:day/:title
-    output: true
   examples:
     permalink: /examples/:path/
     output: true
