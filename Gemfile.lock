@@ -270,7 +270,9 @@ DEPENDENCIES
   jekyll (~> 3.7.3)
   jekyll-compose
   jekyll-feed (~> 0.6)
+  jekyll-gist
   jekyll-seo-tag
+  jekyll-sitemap
   tzinfo-data
 
 BUNDLED WITH
