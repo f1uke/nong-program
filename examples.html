@@ -4,7 +4,6 @@ title: Example
 is_example: true
 ---
 
-
 <section class="hero is-light">
   <div class="hero-body">
     <div class="container">
@@ -18,10 +17,10 @@ is_example: true
         </div>
         <div class="media-body">
           <div class="title">
-            Examples
+            # Examples
           </div>
           <div class="subtitle">
-            ค้นหา <strong>ตัวอย่าง</strong> ของโปรแกรมต่างๆมากมายจากเว็บไซต์เรา
+            ค้นหา <strong>ตัวอย่าง</strong> ของโปรแกรมต่างๆบน Repository ของเรา
           </div>
         </div>
       </div>
@@ -37,36 +36,45 @@ is_example: true
 </div>
 <section class="section">
   <div class="container">
-    <table class="table is-striped is-fullwidth">
-      <thead>
-        <tr>
-          <th class="is-dark">ภาษาโปรแกรม</th>
-          <th class="is-dark">ชื่อตัวอย่างโปรแกรม</th>
-          <th class="is-dark">ผู้เขียน</th>
-          <th class="is-dark">ความยาก</th>
-          <th class="is-dark">เขียนวันที่</th>
-          <th class="is-dark"></th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for example in site.examples %}
-          <tr>
-            <td>
-              <span class="tag is-link">{{ example.language }}</span>
-            </td>
-            <td>
-              <a href="{{ example.url | absolute_url }}">
-                <article class="media">
-                  <div class="media-content">
-                    {{ example.title }}
-                  </div>
-                </article>
-              </a>
-            </td>
-            <td>
-              <a href="{{ example.author.url }}">{{ example.author.name }}</a>
-            </td>
-            <td>
+    <div class="field">
+      <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>All tags</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+          <div class="dropdown-content">
+            {% for tag in site.tags %}
+              <a href="#" class="dropdown-item">{{ tag | first }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      {% for example in site.examples %}
+        <article class="media ex">
+          <div class="media-left">
+            <a href="{{ example.url | absolute_url }}"><i class="ex-icon fas fa-code"></i></a>
+          </div>
+          <div class="media-body">
+            <p>
+              <strong>{{ example.title }}</strong>
+              <small>
+                <a href="{{ example.author.url | absolute_url }}">@{{ example.author.name }}</a>
+                {{ example.date | date_to_long_string }}
+              </small>
+            </p>
+            <p>
+              {{ example.path }}
+            </p>
+          </div>
+          <div class="media-right">
+            <div class="media-right">
               <span class="tag is-danger">
                 {% for i in (1..example.level) %}
                   <i class="fab fa-hotjar badge-level"></i>
@@ -76,19 +84,11 @@ is_example: true
                   <i class="fas fa-circle badge-level badge-empty"></i>
                 {% endfor %}
               </span>
-            </td>
-            <td>
-              {{ example.date | date_to_long_string }}
-            </td>
-            <td>
-              <a href="{{ example.url | absolute_url }}" class="button is-small">
-                ดูโปรแกรม
-              </a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 

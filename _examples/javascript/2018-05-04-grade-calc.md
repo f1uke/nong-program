@@ -1,6 +1,5 @@
 ---
 title: การคำนวณเกรด
-language: JavaScript
 author:
   name: nakorndev
   url: https://github.com/nakorndev
