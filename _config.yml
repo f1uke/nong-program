@@ -22,10 +22,11 @@ social:
 google_site_verification: oBl61nKg-qYqrRiLnf60ML1QdnXyyLx1WiyRQaA9gOA
 
 version:
-  bulma: 0.7.0
-  fontawesome: 5.0.10
+  bulma: 0.7.1
+  fontawesome: 5.0.12
   tippyjs: 2.5.2
   noty: 3.1.4
+  vue: 2.5.16
 
 navigation:
   github: nakorndev/nong-program
