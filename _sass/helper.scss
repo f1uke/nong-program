@@ -9,3 +9,10 @@
 .is-justify-center {
   justify-content: center;
 }
+
+@media screen and (max-width: 769px) {
+  .is-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
