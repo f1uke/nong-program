@@ -8,10 +8,13 @@
     align-items: center;
     color: #3273dc;
     border: 1px solid #3273dc;
-    border-radius: 50%;
+    border-radius: 5px;
     &:hover {
       color: #363636;
       border-color: #363636;
     }
+  }
+  .is-grouped > .control {
+    margin-bottom: 0;
   }
 }

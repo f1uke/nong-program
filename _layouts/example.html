@@ -2,4 +2,53 @@
 layout: default
 ---
 
-{{ content }}
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="media">
+        <div class="media-left">
+          <a class="non-blank" href="{{ page.url | absolute_url }}">
+            <span class="is-heading">
+              🚀
+            </span>
+          </a>
+        </div>
+        <div class="media-body">
+          <div class="title">
+            <a class="has-text-link" href="{{ page.url | absolute_url }}">#</a> {{ page.title }}
+          </div>
+          <div class="subtitle">
+            เขียนโดย <strong><a href="{{ page.author.url }}" class="has-text-link">@{{ page.author.name }}</a></strong> เมื่อวันที่ <abbr title="{{ page.date | date_to_rfc822 }}">{{ page.date | date_to_long_string }}</abbr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="box breadcrumb is-marginless is-radiusless">
+  <div class="container">
+    <ul>
+      <li><a href="{{ 'examples' | absolute_url }}">ตัวอย่างทั้งหมด</a></li>
+      {% assign path = page.path | remove_first:'_examples/' | split:'/' %}
+      <li>
+        <a href="{{ 'examples' | absolute_url }}#{% for folder in path %}{% unless forloop.last %}{{ folder }}{% endunless %}{% endfor %}">
+          {% for folder in path %}
+            {% unless forloop.last %}
+              {{ folder }}
+            {% endunless %}
+          {% endfor %}
+        </a>
+      </li>
+      <li class="is-active">
+        <a href="#">{{ page.title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="content">
+      {{ content }}
+    </div>
+  </div>
+</section>

@@ -27,85 +27,93 @@ is_example: true
     </div>
   </div>
 </section>
-<div class="box breadcrumb is-marginless is-radiusless">
-  <div class="container">
-    <ul>
-      <li>ตัวอย่างโปรแกรม</li>
-    </ul>
+<div id="ex">
+  <div class="box breadcrumb is-marginless is-radiusless">
+    <div class="container">
+      <ul>
+        <template v-if="!currentFilter">
+          <li class="is-active"><a @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a></li>
+        </template>
+        <template v-else>
+          <li><a @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a></li>
+          <li class="is-active"><a @click="onChangeFilter($event, currentFilter)" v-html="labelFilter"></a></li>
+        </template>
+      </ul>
+    </div>
   </div>
-</div>
-<section id="ex" class="section">
-  <div class="container">
-    <div class="columns is-reverse">
-      <div class="column is-three-quarters">
-        <article v-for="example in filteredExamples" class="media">
-          <div class="media-left">
-            <a :href="example.url"><i class="ex-icon fas fa-code"></i></a>
-          </div>
-          <div class="media-body">
-            <p>
-              <strong v-html="example.title"></strong>
-              <small>
-                <a :href="example.author.url" v-html="'@' + example.author.name"></a>
-                <span v-html="example.date"></span>
-              </small>
-            </p>
-            <p class="mt-1">
-              <div class="field is-grouped is-grouped-multiline">
-                <div class="control">
-                  <span class="tags has-addons">
-                    <span class="tag">
-                      <span class="icon is-small"><i class="fas fa-code"></i></span>
-                      <span>ภาษา</span>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-reverse">
+        <div class="column is-three-quarters">
+          <article v-for="example in filteredExamples" class="media">
+            <div class="media-left is-middle">
+              <a title="View a code!" :href="example.url"><i class="ex-icon fas fa-code"></i></a>
+            </div>
+            <div class="media-body">
+              <p>
+                <strong v-html="example.title"></strong>
+                <small>
+                  <a :href="example.author.url" v-html="'@' + example.author.name"></a>
+                  <span v-html="example.date"></span>
+                </small>
+              </p>
+              <p class="mt-1">
+                <div class="field is-grouped is-grouped-multiline">
+                  <div class="control">
+                    <a class="tags has-addons" @click="onChangeFilter($event, example.language)">
+                      <span class="tag">
+                        <span class="icon is-small"><i class="fas fa-code"></i></span>
+                        <span>ภาษา</span>
+                      </span>
+                      <span class="tag is-info" v-html="example.language"></span>
+                    </a>
+                  </div>
+                  <div class="control">
+                    <span class="tags has-addons">
+                      <span class="tag">
+                        <span class="icon is-small"><i class="fas fa-fire-extinguisher"></i></span>
+                        <span>ความยาก</span>
+                      </span>
+                      <span class="tag is-danger">
+                        <i v-for="i in example.level" class="fab fa-hotjar badge-level"></i>
+                        <i v-for="i in (5 - example.level)" class="fas fa-circle badge-level badge-empty"></i>
+                      </span>
                     </span>
-                    <span class="tag is-info" v-html="example.language"></span>
-                  </span>
+                  </div>
                 </div>
-                <div class="control">
-                  <span class="tags has-addons">
-                    <span class="tag">
-                      <span class="icon is-small"><i class="fas fa-fire-extinguisher"></i></span>
-                      <span>ความยาก</span>
-                    </span>
-                    <span class="tag is-danger">
-                      <i v-for="i in example.level" class="fab fa-hotjar badge-level"></i>
-                      <i v-for="i in (5 - example.level)" class="fas fa-circle badge-level badge-empty"></i>
-                    </span>
-                  </span>
-                </div>
-              </div>
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="column">
+          <nav class="panel">
+            <p class="panel-heading">
+              Filters
             </p>
-          </div>
-        </article>
-      </div>
-      <div class="column">
-        <nav class="panel">
-          <p class="panel-heading">
-            Filters
-          </p>
-          <div class="panel-block">
-            <div class="dropdown is-hoverable is-fullwidth">
-              <div class="dropdown-trigger">
-                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span v-html="labelFilter"></span>
-                  <span class="icon is-small">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                <div class="dropdown-content">
-                  <a class="dropdown-item" @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a>
-                  <a v-for="item of languages" class="dropdown-item" @click="onChangeFilter($event, item)" v-html="'- ' + item"></a>
+            <div class="panel-block">
+              <div class="dropdown is-hoverable is-fullwidth">
+                <div class="dropdown-trigger">
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span v-html="labelFilter"></span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a>
+                    <a v-for="item of languages" class="dropdown-item" @click="onChangeFilter($event, item)" v-html="'- ' + item"></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <script>
   new Vue({
@@ -147,7 +155,6 @@ is_example: true
         let examples = this.examples;
         if (this.currentFilter) {
           examples = examples.filter(example => {
-            console.log(this.currentFilter);
             return example.language == this.currentFilter;
           });
         }
@@ -157,7 +164,13 @@ is_example: true
     methods: {
       onChangeFilter(event, filter) {
         event.preventDefault();
+        window.location.hash = filter ? `#${filter}` : '';
         this.currentFilter = filter;
+      }
+    },
+    mounted() {
+      if (window.location.hash) {
+        this.currentFilter = window.location.hash.replace('#', '');
       }
     }
   });
