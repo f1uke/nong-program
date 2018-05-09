@@ -2,34 +2,40 @@ div.highlighter-rouge {
   margin: 20px 0;
   position: relative;
   .runner {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     justify-content: center;
     align-items: center;
     display: flex;
     vertical-align: middle;
-    top: 7px;
+    top: -14.5px;
     padding: 5px;
-    border-radius: 0px;
+    border-radius: 50%;
     color: white;
     position: absolute;
     z-index: 25;
-    opacity: .8;
+    font-size: .8rem;
   }
   .runner.fa-play {
-    right: calc(35px * 2);
-    background-color: #00d1b2;
+    right: calc((33px * 2) + 5px);
+    background-color: #14ce67;
+    padding-left: 7.5px;
   }
   .runner.fa-code {
-    right: 35px;
+    right: calc(33px + 5px);
     background-color: #3273dc;
   }
   .runner.fa-copy {
-    right: 0;
+    right: 5px;
     background-color: #909090;
   }
   .runner:hover {
     cursor: pointer;
+  }
+}
+.highlighter-rouge.is-danger {
+  .runner.fa-play {
+    background-color: #ff2020;
   }
 }
 .editor {
@@ -55,18 +61,10 @@ div.highlighter-rouge {
 }
 pre.highlight {
   position: relative;
-  border-top-width: 7px;
-  border-top-style: solid;
-  border-radius: 4px;
   color: #f8f8f2;
   background-color: #49483e;
   padding: 1.25em 3.5em;
-}
-.highlighter-rouge.is-danger pre.highlight {
-  border-top-color: #ff5239;
-}
-.highlighter-rouge pre.highlight {
-  border-top-color: #cecece;
+  border-radius: 4px;
 }
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
