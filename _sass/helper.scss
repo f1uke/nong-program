@@ -20,6 +20,11 @@
   align-self: center;
 }
 
+.is-block-center {
+  display: block;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 769px) {
   .is-reverse {
     display: flex;
