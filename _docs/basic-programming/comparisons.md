@@ -25,7 +25,7 @@ let a = 2, b = 10;
 alert(`
   กำหนดให้ a = ${a}, b = ${b}
   a < b: ${a < b}
-  a > b: ${a > b} 
+  a > b: ${a > b}
   a <= b: ${a <= b}
   a >= b: ${a >= b}
   a == b: ${a == b}
