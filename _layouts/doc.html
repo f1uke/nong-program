@@ -82,9 +82,18 @@ layout: default
       </div>
     {% endif %}
     <hr>
-    <div id="docs" class="content">
-      {{ content }}
+    <div class="field">
+      <div id="docs" class="content">
+        {{ content }}
+      </div>
     </div>
-    {% include docs_paginate.html %}
+    <div class="field">
+      {% include docs_paginate.html %}
+    </div>
+    <div class="field">
+      <div class="box">
+        <div id="disqus_thread"></div>
+      </div>
+    </div>
   </div>
 </section>
