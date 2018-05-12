@@ -25,6 +25,10 @@
   margin: 0 auto;
 }
 
+.is-none-decoration {
+  text-decoration: none !important;
+}
+
 @media screen and (max-width: 769px) {
   .is-reverse {
     display: flex;
