@@ -2,29 +2,16 @@
 layout: default
 ---
 
-<section class="hero is-light">
-  <div class="hero-body">
-    <div class="container">
-      <div class="media">
-        <div class="media-left">
-          <a class="non-blank" href="{{ page.url | absolute_url }}">
-            <span class="is-heading">
-              🚀
-            </span>
-          </a>
-        </div>
-        <div class="media-body">
-          <div class="title">
-            <a class="has-text-link" href="{{ page.url | absolute_url }}">#</a> {{ page.title }}
-          </div>
-          <div class="subtitle">
-            เขียนโดย <strong><a href="{{ page.author.url }}" class="has-text-link">@{{ page.author.name }}</a></strong> เมื่อวันที่ <abbr title="{{ page.date | date_to_rfc822 }}">{{ page.date | date_to_long_string }}</abbr>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture desc %}
+  เขียนโดย <strong><a href="{{ page.author.url }}" class="has-text-link">@{{ page.author.name }}</a></strong> เมื่อวันที่ <abbr title="{{ page.date | date_to_rfc822 }}">{{ page.date | date_to_long_string }}</abbr>
+{% endcapture %}
+{%
+  include hero.html
+  icon="🚀"
+  title=page.title
+  describe=desc
+  url=page.url
+%}
 <div class="box breadcrumb is-marginless is-radiusless">
   <div class="container">
     <ul>

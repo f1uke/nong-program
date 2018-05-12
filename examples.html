@@ -4,29 +4,13 @@ title: Example
 is_example: true
 ---
 
-<section class="hero is-light">
-  <div class="hero-body">
-    <div class="container">
-      <div class="media">
-        <div class="media-left">
-          <a class="non-blank" href="{{ 'examples' | absolute_url }}">
-            <span class="is-heading">
-              🚀
-            </span>
-          </a>
-        </div>
-        <div class="media-body">
-          <div class="title">
-            <a class="has-text-link" href="{{ 'examples' | absolute_url }}">#</a> Examples
-          </div>
-          <div class="subtitle">
-            ค้นหา <strong>ตัวอย่าง</strong> ของโปรแกรมต่างๆบน Repository ของเรา
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{%
+  include hero.html
+  icon="🚀"
+  title="Examples"
+  describe="ค้นหา <strong>ตัวอย่าง</strong> ของโปรแกรมต่างๆบน Repository ของเรา"
+  url="examples"
+%}
 <div id="ex">
   <div class="box breadcrumb is-marginless is-radiusless">
     <div class="container">
@@ -86,29 +70,39 @@ is_example: true
           </article>
         </div>
         <div class="column">
-          <nav class="panel">
-            <p class="panel-heading">
-              Filters
-            </p>
-            <div class="panel-block">
-              <div class="dropdown is-hoverable is-fullwidth">
-                <div class="dropdown-trigger">
-                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                    <span v-html="labelFilter"></span>
-                    <span class="icon is-small">
-                      <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                  <div class="dropdown-content">
-                    <a class="dropdown-item" @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a>
-                    <a v-for="item of languages" class="dropdown-item" @click="onChangeFilter($event, item)" v-html="'- ' + item"></a>
+          <div class="field">
+            <a href="{{ 'examples/create' | absolute_url }}" class="button is-link is-fullwidth">
+              <span class="icon">
+                <i class="fas fa-plus"></i>
+              </span>
+              <span>เพิ่มตัวอย่างใหม่</span>
+            </a>
+          </div>
+          <div class="field">
+            <nav class="panel">
+              <p class="panel-heading">
+                Filters
+              </p>
+              <div class="panel-block">
+                <div class="dropdown is-hoverable is-fullwidth">
+                  <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                      <span v-html="labelFilter"></span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item" @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a>
+                      <a v-for="item of languages" class="dropdown-item" @click="onChangeFilter($event, item)" v-html="'- ' + item"></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
