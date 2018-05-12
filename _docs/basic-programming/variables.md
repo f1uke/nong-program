@@ -3,7 +3,7 @@ title: Variables
 subtitle: การใช้งาน <strong>ตัวแปร</strong> ในการกำหนดค่า
 icon: fas fa-superscript
 difficulty: 2
-duration: 4
+duration: 3
 useful: 4
 ---
 

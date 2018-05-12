@@ -3,7 +3,7 @@ title: Data Types
 subtitle: ทำความเข้าใจกับ <strong>ประเภทข้อมูลของตัวแปร</strong>
 icon: fas fa-database
 difficulty: 3
-duration: 4
+duration: 3
 useful: 5
 ---
 

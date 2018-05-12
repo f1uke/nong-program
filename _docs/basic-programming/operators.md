@@ -3,7 +3,7 @@ title: Operators
 subtitle: การใช้งาน <strong>เครื่องหมายการดำเนินการ</strong> ในภาษาโปรแกรม
 icon: fas fa-percent
 difficulty: 2
-duration: 4
+duration: 3
 useful: 5
 ---
 
