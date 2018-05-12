@@ -8,9 +8,9 @@
     {% assign document_url = document | prepend: '/' | prepend: head | prepend:"/docs/" | append:"/" %}
 
     {% if document_url == page.url %}
-      <nav class="pagination is-centered">
+      <nav class="pagination is-doc-fixed is-centered">
         {% if forloop.first and forloop.parentloop.first %}
-          <a class="button is-text" disabled>< ก่อนหน้า</a>
+          <a class="button is-text is-left is-pagination" disabled><i class="fas fa-chevron-left"></i></a>
         {% else %}
           {% if forloop.first %}
             {% assign previous = forloop.parentloop.index0 | minus: 1 %}
@@ -21,10 +21,10 @@
             {% assign previous = forloop.index0 | minus: 1 %}
             {% assign previous_page = docs[previous] | prepend: '/' | prepend: head | prepend:"/docs/" | append:"/" %}
           {% endif %}
-          <a class="button is-text" href="{{ '' | absolute_url | append: previous_page }}">< ก่อนหน้า</a>
+          <a class="button is-text is-left is-pagination" data-tippy-placement="right" title="ก่อนหน้า" href="{{ '' | absolute_url | append: previous_page }}"><i class="fas fa-chevron-left"></i></a>
         {% endif %}
         {% if forloop.last and forloop.parentloop.last %}
-          <a class="button is-text" disabled>ถัดไป ></a>
+          <a class="button is-text is-right is-pagination" disabled><i class="fas fa-chevron-right"></i></a>
         {% else %}
           {% if forloop.last %}
             {% assign next = forloop.parentloop.index0 | plus: 1 %}
@@ -35,7 +35,7 @@
             {% assign next = forloop.index0 | plus: 1 %}
             {% assign next_page = docs[next] | prepend: '/' | prepend: head | prepend:"/docs/" | append:"/" %}
           {% endif %}
-          <a class="button is-text" href="{{ '' | absolute_url | append: next_page }}">ถัดไป ></a>
+          <a class="button is-text is-right is-pagination" data-tippy-placement="left" title="ถัดไป" href="{{ '' | absolute_url | append: next_page }}"><i class="fas fa-chevron-right"></i></a>
         {% endif %}
       </nav>
     {% endif %}
