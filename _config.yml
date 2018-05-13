@@ -28,6 +28,7 @@ version:
   tippyjs: 2.5.2
   noty: 3.1.4
   vue: 2.5.16
+  moment: 2.22.1
 
 navigation:
   github: nakorndev/nong-program
