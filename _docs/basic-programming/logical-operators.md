@@ -3,8 +3,8 @@ title: Logical Operators
 subtitle: การใช้ <strong>เครื่องหมายดำเนินการทางตรรกศาสตร์</strong> ร่วมกับการใช้เงื่อนไข
 icon: fas fa-arrows-alt-h
 difficulty: 1
-duration: 1
-useful: 1
+duration: 2
+useful: 4
 ---
 
 ## ตรรกศาสตร์
@@ -31,7 +31,7 @@ useful: 1
 
 เนื่องจาก **หรือ (or)** จำเป็นจะต้อง false ทั้งหมดถึงจะนับเป็น false หากมีอันใดอันหนึ่ง true ถือว่าเป็น true ทันที
 
-> **เพิ่มเติม:** คือถ้าให้เข้าใจง่ายๆ เนื่องจาก "วันนี้อาหารเช้าเป็นไข่ดาวและหมูทอดใช่มั้ย?" จำเป็นจะต้องมีทั้งคู่ประโยคดังกล่าวถึงพูดได้ถูกต้อง ขณะที่ "วันนี้อาหารเช้าเป็นไข่ดาวหรือหมูทอดกันนะ?" มีเพียงเมนูใดเมนูหนึ่งจะถือว่าประโยคนั้นถูกต้องทันที
+> **เพิ่มเติม:** คือถ้าให้เข้าใจง่ายๆ เนื่องจาก **"วันนี้อาหารเช้าเป็นไข่ดาวและหมูทอดใช่มั้ย?"** จำเป็นจะต้องมีทั้งคู่ประโยคดังกล่าวถึงพูดได้ถูกต้อง ขณะที่ **"วันนี้อาหารเช้าเป็นไข่ดาวหรือหมูทอดกันนะ?"** มีเพียงเมนูใดเมนูหนึ่งจะถือว่าประโยคนั้นถูกต้องทันที
 
 ## And
 
@@ -45,11 +45,11 @@ alert(false && false); // false
 ```
 
 ```javascript
-// ต้องใช้เฉพาะ Yes เท่านั้นสำหรับ true ส่วนถ้าตอบอื่นๆจะเป็น false
-// ซึ่งในข้อนี้เราใช้ และ ดังนั้นหากตอบเท็จไปสักข้อหนึ่ง ผลลัพธ์จะเป็น false
-let firedEgg = prompt('Did breakfast has fried egg? (Yes/No)');
-let firedPork = prompt('Did breakfast has fired pork? (Yes/No)');
-alert(`Your answer is ${firedEgg == 'Yes' && firedPork == 'Yes'}`);
+// ตอบตกลง คือมี ตอบยกเลิก คือไม่มี
+// ในข้อนี้เราใช้ และ ดังนั้นหากตอบเท็จไปสักข้อหนึ่ง ผลลัพธ์จะเป็น false
+let firedEgg = confirm('ข้าวเช้าคุณมีไข่ดาวใช่หรือไม่?');
+let firedPork = confirm('ข้าวเช้าคุณมีหมูทอดใช่หรือไม่?');
+alert(`ผลลัพธ์คือ ${firedEgg && firedPork}`);
 ```
 
 > **เพิ่มเติม:** การใช้ `&&` สามารถบอกค่า **ระหว่าง** ของค่าใดค่าหนึ่งได้ โดยตัวอย่างจะกำหนดให้หาค่า `answer` ต้องมากกว่าหรือเท่ากับ 1 ในขณะที่ก็ต้องห้ามมากกว่า 10 เพราะใช้เงื่อนไข and
@@ -75,9 +75,9 @@ alert(false || false); // false
 ```
 
 ```javascript
-let firedEgg = prompt('Did breakfast has fried egg? (Yes/No)');
-let firedPork = prompt('Did breakfast has fired pork? (Yes/No)');
-alert(`Your answer is ${firedEgg == 'Yes' || firedPork == 'Yes'}`);
+let firedEgg = confirm('ข้าวเช้าคุณมีไข่ดาวใช่หรือไม่?');
+let firedPork = confirm('ข้าวเช้าคุณมีหมูทอดใช่หรือไม่?');
+alert(`ผลลัพธ์คือ ${firedEgg || firedPork}`);
 ```
 
 > **เพิ่มเติม:** การใช้ `||` ของ JavaScript จะมี Feature พิเศษที่สามารถใช้กำหนดค่า **Default value** ได้ในกรณีที่ข้อมูลแรกเป็น `false` ใดๆก็ตาม (รวมทั้ง `0` `null` `undefined`) โดยข้อมูลจะถูกใช้ในเงื่อนไขต่อไปแทน
@@ -89,7 +89,7 @@ alert(`Your answer is ${firedEgg == 'Yes' || firedPork == 'Yes'}`);
 
 ## not
 
-**นิเสธ (not)** จะเป็นการกลับความหมายระหว่าง `true => false` และ `false => true` โดยใช้เครื่องหมาย `!`
+**นิเสธ (not)** จะเป็นการกลับความหมายระหว่าง `true ไปเป็น false` และ `false ไปเป็น true` โดยใช้เครื่องหมาย `!`
 
 ```javascript
 alert(!true); // false
@@ -98,11 +98,11 @@ alert(!undefined); // true
 ```
 
 ```javascript
-let username = 'johndoe';
-let hideUser = confirm('Do you need to hide user?');
-if (!hideUser) {
+let username = 'johndoe1911';
+let hide = confirm('Do you need to hide your username?'); // ซ่อนชื่อผู้ใช้
+if (!hide) { // ถ้า ไม่ซ่อน
   alert(username);
-} else {
+} else { // ถ้าอื่นๆ (ซ่อน)
   alert('xxxxxx');
 }
 ```
@@ -110,32 +110,35 @@ if (!hideUser) {
 > **เพิ่มเติม:** จะมีปัญหาการใช้ `!` กับ String เพื่อตรวจสอบว่าค่าดังกล่าว **เป็นค่าว่างเปล่า** หรือไม่ โดยเราสามารถใช้ `!` ครั้งแรกเพื่อแปลงค่าเป็น Boolean ก่อน จากนั้นใช้ `!` อีกครั้งให้ทำการกลับค่า not เป็นค่าที่ถูกต้อง จึงได้เครื่องหมาย `!!` ในการใช้งาน
 >
 > ```javascript
+> // ตัวอย่างข้อมูลที่มี
 > alert(null); // null
 > alert(''); //
 > alert('foobar'); // foobar
 > ```
 >
 > ```javascript
+> // ตัวอย่างการตรวจสอบว่า เป็นค่าว่างหรือไม่
 > alert(!null); // true
 > alert(!''); // true
 > alert(!'foobar'); // false
 > ```
 >
 > ```javascript
+> // ตัวอย่างการตรวจสอบว่า มีค่าบางอย่างหรือไม่
 > alert(!!null); // false
 > alert(!!''); // false
 > alert(!!'foobar'); // true
 > ```
 >
 > ```javascript
-> alert(!!prompt('Check input is not empty?')); // เช็คว่าได้ใส่ค่าบางอย่างหรือไม่
+> alert(!!prompt('Check input is not empty?')); // เช็คว่าได้ใส่ค่าบางอย่างหรือไม่ หากไม่ใส่จะขึ้น false
 > ```
 
 ## บทสรุป
 
 - **และ (and)** ใช้ `&&` และจะเป็นจริงต่อเมื่อจริงทั้งหมด
-  - and สามารถใช้เพื่อหาค่าระหว่างใดระหว่างหนึ่งได้
+  - `&&` สามารถใช้เพื่อหาค่าระหว่างใดระหว่างหนึ่งได้
 - **หรือ (or)** ใช้ `||` และจะเป็นเท็จต่อเมื่อเท็จทั้งหมด
-  - or ใน JavaScript สามารถใช้เพื่อทำค่า Default ได้
+  - `||` ใน JavaScript สามารถใช้เพื่อทำค่า Default ได้
 - **นิเสธ (not)** จะใช้เครื่องหมาย `!` เพื่อกลับค่าจริงกับเท็จ
   - ใช้ `!!` เพื่อตรวจสอบ String ว่ามีค่าใดๆหรือไม่

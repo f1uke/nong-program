@@ -2,4 +2,40 @@
 layout: default
 ---
 
-{{ content }}
+{% capture desc %}
+  ตัวอย่างโดย <strong><a href="{{ page.author.url }}" class="has-text-link">@{{ page.author.name }}</a></strong> เมื่อวันที่ <abbr title="{{ page.date | date_to_rfc822 }}">{{ page.date | date_to_long_string }}</abbr>
+{% endcapture %}
+{%
+  include hero.html
+  icon="🚀"
+  title=page.title
+  describe=desc
+  url=page.url
+%}
+<div class="box breadcrumb is-marginless is-radiusless">
+  <div class="container">
+    <ul>
+      <li><a href="{{ 'examples' | absolute_url }}">ตัวอย่างทั้งหมด</a></li>
+      {% assign path = page.path | remove_first:'_examples/' | split:'/' %}
+      <li>
+        <a href="{{ 'examples' | absolute_url }}#{% for folder in path %}{% unless forloop.last %}{{ folder }}{% endunless %}{% endfor %}">
+          {% for folder in path %}
+            {% unless forloop.last %}
+              {{ folder }}
+            {% endunless %}
+          {% endfor %}
+        </a>
+      </li>
+      <li class="is-active">
+        <a href="#">{{ page.title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="content">
+      {{ content }}
+    </div>
+  </div>
+</section>

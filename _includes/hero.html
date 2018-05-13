@@ -1,0 +1,23 @@
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="media">
+        <div class="media-left is-hidden-touch">
+          <a class="non-blank" href="{{ include.url | absolute_url }}">
+            <span class="is-heading">
+              {{ include.icon }}
+            </span>
+          </a>
+        </div>
+        <div class="media-body">
+          <div class="title">
+            <a class="has-text-link" href="{{ include.url | absolute_url }}">#</a> {{ include.title }}
+          </div>
+          <div class="subtitle">
+            {{ include.describe }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

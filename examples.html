@@ -1,19 +1,171 @@
 ---
 layout: default
 title: Example
+is_example: true
 ---
 
-<section class="section">
-  <div class="container">
-    {% for example in site.examples %}
-      <a href="{{ example.url | absolute_url }}">
-        <article class="media">
-          <div class="media-content">
-            {{ example.title }}
-          </div>
-        </article>
-      </a>
-    {% endfor %}
+{%
+  include hero.html
+  icon="🚀"
+  title="Examples"
+  describe="ค้นหา <strong>ตัวอย่าง</strong> ของโปรแกรมต่างๆบน Repository ของเรา"
+  url="examples"
+%}
+<div id="ex">
+  <div class="box breadcrumb is-marginless is-radiusless">
+    <div class="container">
+      <ul>
+        <template v-if="!currentFilter">
+          <li class="is-active"><a @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a></li>
+        </template>
+        <template v-else>
+          <li><a @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a></li>
+          <li class="is-active"><a @click="onChangeFilter($event, currentFilter)" v-html="labelFilter"></a></li>
+        </template>
+      </ul>
+    </div>
   </div>
-</section>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-reverse">
+        <div class="column is-three-quarters">
+          <article v-for="example in filteredExamples" class="media">
+            <div class="media-left is-middle">
+              <a title="View a code!" :href="example.url"><i class="ex-icon fas fa-code"></i></a>
+            </div>
+            <div class="media-body">
+              <p>
+                <strong v-html="example.title"></strong>
+                <small>
+                  <a :href="example.author.url" v-html="'@' + example.author.name"></a>
+                  <span v-html="example.date"></span>
+                </small>
+              </p>
+              <p class="mt-1">
+                <div class="field is-grouped is-grouped-multiline">
+                  <div class="control">
+                    <a class="tags has-addons" @click="onChangeFilter($event, example.language)">
+                      <span class="tag">
+                        <span class="icon is-small"><i class="fas fa-code"></i></span>
+                        <span>ภาษา</span>
+                      </span>
+                      <span class="tag is-info" v-html="example.language"></span>
+                    </a>
+                  </div>
+                  <div class="control">
+                    <span class="tags has-addons">
+                      <span class="tag">
+                        <span class="icon is-small"><i class="fas fa-fire-extinguisher"></i></span>
+                        <span>ความยาก</span>
+                      </span>
+                      <span class="tag is-danger">
+                        <i v-for="i in example.level" class="fab fa-hotjar badge-level"></i>
+                        <i v-for="i in (5 - example.level)" class="fas fa-circle badge-level badge-empty"></i>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="column">
+          <div class="field">
+            <a href="{{ 'examples/create' | absolute_url }}" class="button is-link is-fullwidth">
+              <span class="icon">
+                <i class="fas fa-plus"></i>
+              </span>
+              <span>เพิ่มตัวอย่างใหม่</span>
+            </a>
+          </div>
+          <div class="field">
+            <nav class="panel">
+              <p class="panel-heading">
+                Filters
+              </p>
+              <div class="panel-block">
+                <div class="dropdown is-hoverable is-fullwidth">
+                  <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                      <span v-html="labelFilter"></span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item" @click="onChangeFilter($event, '')">ตัวอย่างทั้งหมด</a>
+                      <a v-for="item of languages" class="dropdown-item" @click="onChangeFilter($event, item)" v-html="'- ' + item"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
+<script>
+  new Vue({
+    el: '#ex',
+    data: {
+      examples: [
+        {% for example in site.examples %}
+        {% assign path = example.path | remove_first:'_examples/' | split:'/' %}
+          {
+            title: '{{ example.title }}',
+            url: '{{ example.url | absolute_url }}',
+            language: '{% for folder in path %}{% unless forloop.last %}{{ folder }}{% endunless %}{% endfor %}',
+            author: {
+              url: '{{ example.author.url | absolute_url }}',
+              name: '{{ example.author.name }}'
+            },
+            date: '{{ example.date | date_to_long_string }}',
+            level: {{ example.level }}
+          },
+        {% endfor %}
+      ],
+      languages: [
+        {% for example in site.examples %}
+          {% assign path = example.path | remove_first:'_examples/' | split:'/' %}
+          {% for folder in path %}
+              {% unless forloop.last %}
+                '{{ folder }}',
+              {% endunless %}
+          {% endfor %}
+        {% endfor %}
+      ],
+      currentFilter: ''
+    },
+    computed: {
+      labelFilter() {
+        return this.currentFilter || 'ตัวอย่างทั้งหมด';
+      },
+      filteredExamples() {
+        let examples = this.examples;
+        if (this.currentFilter) {
+          examples = examples.filter(example => {
+            return example.language == this.currentFilter;
+          });
+        }
+        return examples;
+      }
+    },
+    methods: {
+      onChangeFilter(event, filter) {
+        event.preventDefault();
+        window.location.hash = filter ? `#${filter}` : '';
+        this.currentFilter = filter;
+      }
+    },
+    mounted() {
+      if (window.location.hash) {
+        this.currentFilter = window.location.hash.replace('#', '');
+      }
+    }
+  });
+</script>

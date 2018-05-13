@@ -2,34 +2,47 @@ div.highlighter-rouge {
   margin: 20px 0;
   position: relative;
   .runner {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     justify-content: center;
     align-items: center;
     display: flex;
     vertical-align: middle;
-    top: 7px;
+    top: -14.5px;
     padding: 5px;
-    border-radius: 0px;
+    border-radius: 50%;
     color: white;
     position: absolute;
     z-index: 25;
-    opacity: .8;
-  }
-  .runner.fa-play {
-    right: calc(35px * 2);
-    background-color: #00d1b2;
-  }
-  .runner.fa-code {
-    right: 35px;
-    background-color: #3273dc;
+    font-size: .8rem;
+    margin-top: 10px;
   }
   .runner.fa-copy {
-    right: 0;
+    left: 5px;
     background-color: #909090;
   }
   .runner:hover {
     cursor: pointer;
+  }
+}
+div.highlighter-rouge.language-javascript {
+  .runner.fa-play {
+    left: 5px;
+    background-color: #14ce67;
+    padding-left: 7.5px;
+  }
+  .runner.fa-code {
+    left: calc(33px + 5px);
+    background-color: #3273dc;
+  }
+  .runner.fa-copy {
+    left: calc((33px * 2) + 5px);
+    background-color: #909090;
+  }
+}
+div.highlighter-rouge.is-danger.language-javascript {
+  .runner.fa-play {
+    background-color: #ff2020;
   }
 }
 .editor {
@@ -43,7 +56,7 @@ div.highlighter-rouge {
   }
   .line {
     list-style: none;
-    margin: 18px 0 0 0;
+    margin: 25px 0 0 0;
     text-align: right;
     li+li.no {
       margin-top: 0;
@@ -55,18 +68,11 @@ div.highlighter-rouge {
 }
 pre.highlight {
   position: relative;
-  border-top-width: 7px;
-  border-top-style: solid;
-  border-radius: 4px;
   color: #f8f8f2;
   background-color: #49483e;
-  padding: 1.25em 3.5em;
-}
-.highlighter-rouge.is-danger pre.highlight {
-  border-top-color: #ff5239;
-}
-.highlighter-rouge pre.highlight {
-  border-top-color: #cecece;
+  padding: 1.75em 1.25em 1.25em 3.5em;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }

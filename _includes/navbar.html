@@ -27,22 +27,23 @@
   </div>
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-start">
+      {% if page.is_doc %}
+        {% include docs_paginate.html %}
+      {% endif %}
       {% if site.navigation.patreon %}
         <a class="navbar-item is-hidden-desktop text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
-          <span class="icon is-medium"><i class="fab fa-patreon"></i></span>
+          <span class="icon"><i class="fab fa-patreon"></i></span>
           <span>สนับสนุนเรา</span>
         </a>
       {% endif %}
-      <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ '/docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
-        <span class="icon is-medium has-text-success"><i class="fas fa-book"></i></span>
-        <span>เริ่มเรียน</span>
+      <a class="navbar-item {% if page.is_doc %}is-active{% endif %}" href="{{ 'docs/' | append: site.data.docs[0].url | append: '/' | append: site.data.docs[0].sub_docs[0].url | absolute_url }}">
+        📚 เริ่มเรียน
       </a>
-      <a class="navbar-item {% if page.is_news %}is-active{% endif %}" href="{{ '/' | absolute_url }}">
-        <span class="icon is-medium has-text-danger"><i class="fas fa-newspaper"></i></span>
-        <span>ข่าวสาร</span>
+      <a class="navbar-item {% if page.is_example %}is-active{% endif %}" href="{{ 'examples' | absolute_url }}">
+        🚀 ตัวอย่าง
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
-        <div class="navbar-link">
+        <div class="navbar-link is-hidden-touch">
           เพิ่มเติม
         </div>
         <div id="moreDropdown" class="navbar-dropdown">
@@ -58,23 +59,6 @@
                   <strong>Editor</strong>
                   <br>
                   <small>เขียนโปรแกรม JavaScript ผ่านเว็บไซต์เรา</small>
-                </p>
-              </div>
-            </div>
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item " href="{{ '/' | absolute_url }}">
-            <div class="media">
-              <div class="media-left">
-                <span class="icon is-large has-text-success">
-                  <span class="fas fa-2x fa-certificate"></span>
-                </span>
-              </div>
-              <div class="media-content">
-                <p>
-                  <strong>Awesome</strong>
-                  <br>
-                  <small>รวมข้อมูลที่น่าสนใจสำหรับ Programmer</small>
                 </p>
               </div>
             </div>

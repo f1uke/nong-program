@@ -37,6 +37,12 @@
   <meta name="theme-color" content="#ffffff">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/{{ site.version.tippyjs }}/tippy.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/{{ site.version.noty }}/noty.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/{{ site.version.moment }}/moment.min.js"></script>
+  {% if site.production %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/{{ site.version.vue }}/vue.min.js"></script>
+  {% else %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/{{ site.version.vue }}/vue.js"></script>
+  {% endif %}
 </head>
 <body>
   <div id="shadowed" style="display: none;"></div>
@@ -56,5 +62,15 @@
   <script src="{{ 'assets/js/offset.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/gumshoe.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/app.js' | absolute_url }}"></script>
+  {% if page.is_doc %}
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://nakorndev.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+    </script>
+  {% endif %}
 </body>
 </html>

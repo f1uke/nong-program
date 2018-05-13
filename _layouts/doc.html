@@ -8,8 +8,22 @@ layout: default
 <section class="section is-docs">
   <div class="container is-fluid">
     <div class="field">
+      <div class="control is-pulled-right is-hidden-touch">
+        <a href="https://github.com/nakorndev/nong-program/edit/master/{{ page.path }}" class="button is-text is-none-decoration">
+          <span class="icon">
+            <i class="fas fa-edit"></i>
+          </span>
+          <span>แก้ไข</span>
+        </a>
+        <a href="https://github.com/nakorndev/nong-program/issues/new?labels=content,help+wanted,good+first+issue&title=แจ้งปัญหาของ+{{ page.url }}" class="button is-text is-none-decoration">
+          <span class="icon">
+            <i class="fas fa-exclamation-circle has-text-danger"></i>
+          </span>
+          <span>แจ้งปัญหา</span>
+        </a>
+      </div>
       <div class="media">
-        <div class="media-left">
+        <div class="media-left is-hidden-touch">
           <a class="is-hoverable non-blank" href="{{ page.url | absolute_url }}">
             <span class="icon is-heading has-text-link">
               <i class="{{ page.icon }}" {{ page.icon-custom }}></i>
@@ -26,7 +40,7 @@ layout: default
         </div>
       </div>
     </div>
-    {% if page.duration and page.difficulty %}
+    {% if page.duration and page.difficulty and page.useful %}
       <div class="field is-grouped is-grouped-multiline">
         <div class="control">
           <div class="tags has-addons">
@@ -82,9 +96,18 @@ layout: default
       </div>
     {% endif %}
     <hr>
-    <div id="docs" class="content">
-      {{ content }}
+    <div class="field">
+      <div id="docs" class="content">
+        {{ content }}
+      </div>
     </div>
-    {% include docs_paginate.html %}
+    <div class="field is-hidden-touch">
+      {% include docs_paginate.html %}
+    </div>
+    <div class="field">
+      <div class="box">
+        <div id="disqus_thread"></div>
+      </div>
+    </div>
   </div>
 </section>

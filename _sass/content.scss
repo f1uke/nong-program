@@ -4,6 +4,9 @@
     border-radius: 50%;
     padding: 30px;
     font-size: 2rem;
+    &.has-text-white {
+      border-color: white;
+    }
   }
   &.is-heading.has-text-link {
     border-color: $link;
@@ -61,7 +64,6 @@
     padding-top: 10px;
   }
   code.highlighter-rouge {
-    white-space: nowrap;
     padding: 3px 8px;
     background-color: #49483e;
     color: #f8f8f2;

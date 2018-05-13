@@ -1,3 +1,4 @@
+production: false
 name: น้องโปรแกรม
 title: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
 description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub.com สำหรับผู้ที่ต้องการเริ่มแบบง่ายๆ รวดเร็ว และมีการสอนใช้เครื่องมือที่ทันสมัยกว่า
@@ -22,10 +23,12 @@ social:
 google_site_verification: oBl61nKg-qYqrRiLnf60ML1QdnXyyLx1WiyRQaA9gOA
 
 version:
-  bulma: 0.7.0
-  fontawesome: 5.0.10
+  bulma: 0.7.1
+  fontawesome: 5.0.12
   tippyjs: 2.5.2
   noty: 3.1.4
+  vue: 2.5.16
+  moment: 2.22.1
 
 navigation:
   github: nakorndev/nong-program
@@ -54,9 +57,6 @@ collections:
   docs:
     permalink: /docs/:path/
     output: true
-  news:
-    permalink: /news/:year/:month/:day/:title
-    output: true
   examples:
     permalink: /examples/:path/
     output: true
@@ -74,6 +74,7 @@ defaults:
     values:
       layout: doc
       is_doc: true
+      comments: true
   - scope:
       path: _examples
       type: examples

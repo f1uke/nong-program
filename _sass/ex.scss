@@ -1,0 +1,22 @@
+#ex {
+  .ex-icon {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3273dc;
+    border: 1px solid #3273dc;
+    border-radius: 5px;
+    &:hover {
+      color: #363636;
+      border-color: #363636;
+    }
+  }
+  @media screen and (min-width: 1088px) {
+    .is-grouped > .control {
+      margin-bottom: 0;
+    }
+  }
+}

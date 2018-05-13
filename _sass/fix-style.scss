@@ -24,3 +24,15 @@
   background-color: #fafafa;
   color: #3273dc;
 }
+
+.dropdown.is-fullwidth {
+  display: block;
+  width: 100%;
+  .button {
+    display: flex;
+    width: 100%;
+  }
+  &.is-hoverable:hover .dropdown-menu {
+    width: 100%;
+  }
+}
