@@ -14,7 +14,9 @@
       border-color: #363636;
     }
   }
-  .is-grouped > .control {
-    margin-bottom: 0;
+  @media screen and (min-width: 1088px) {
+    .is-grouped > .control {
+      margin-bottom: 0;
+    }
   }
 }

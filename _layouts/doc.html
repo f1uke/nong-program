@@ -8,7 +8,7 @@ layout: default
 <section class="section is-docs">
   <div class="container is-fluid">
     <div class="field">
-      <div class="control is-pulled-right">
+      <div class="control is-pulled-right is-hidden-touch">
         <a href="https://github.com/nakorndev/nong-program/edit/master/{{ page.path }}" class="button is-text is-none-decoration">
           <span class="icon">
             <i class="fas fa-edit"></i>
@@ -23,7 +23,7 @@ layout: default
         </a>
       </div>
       <div class="media">
-        <div class="media-left">
+        <div class="media-left is-hidden-touch">
           <a class="is-hoverable non-blank" href="{{ page.url | absolute_url }}">
             <span class="icon is-heading has-text-link">
               <i class="{{ page.icon }}" {{ page.icon-custom }}></i>
@@ -101,7 +101,7 @@ layout: default
         {{ content }}
       </div>
     </div>
-    <div class="field">
+    <div class="field is-hidden-touch">
       {% include docs_paginate.html %}
     </div>
     <div class="field">
