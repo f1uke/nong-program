@@ -52,10 +52,10 @@
       {{ content }}
     </main>
   </div>
-  <footer class="footer {% if page.is_doc %}is-docs{% endif %}">
+  <footer id="footer" class="footer {% if page.is_doc %}is-docs{% endif %}">
     <div class="container is-fluid">
-      <div class="content has-text-centered">
-        Hello footer
+      <div class="content">
+        {% include footer.html %}
       </div>
     </div>
   </footer>
