@@ -1,8 +1,25 @@
-# น้องโปรแกรมที่เรารัก ❤
+# น้องโปรแกรม
 
-- รับชมเว็บบล็อกออนไลน์ได้ที่ [https://nakorndev.github.io/nong-program/](https://nakorndev.github.io/nong-program/)
-- ดาวน์โหลดได้ที่ [https://github.com/nakorndev/nong-program/releases](https://github.com/nakorndev/nong-program/releases)
-- อ่านวิธีการ Contributes ได้ที่ [/.github/CONTRIBUTING.md](/.github/CONTRIBUTING.md)
+![Travis](https://img.shields.io/travis/nakorndev/nong-program.svg)
+![license](https://img.shields.io/github/license/nakorndev/nong-program.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/nakorndev/nong-program.svg)
+![GitHub repo size in bytes](https://img.shields.io/github/repo-size/nakorndev/nong-program.svg)
+
+รับชมเว็บไซต์ได้ที่ [https://github.com/nakorndev/nong-program/releases](https://github.com/nakorndev/nong-program/releases)
+
+## ผู้สนับสนุน
+
+อาจจะเป็นคุณในวันนี้ 😁
+
+## ร่วมสนับสนุนเรา
+
+ร่วมอัปเกรดจากมาม่าซอง 🍜 กลายเป็นมาม่าคัฟ 🥡 กับเราผ่าน Patreon และรับสิทธิพิเศษอื่นๆเพิ่มเติม
+
+[![Patron](https://c5.patreon.com/external/logo/become_a_patron_button@2x.png)](https://www.patreon.com/bePatron?c=1655061)
+
+## การมีส่วนร่วม
+
+อ่านวิธีการ Contributes ได้ที่ [/.github/CONTRIBUTING.md](/.github/CONTRIBUTING.md)
 
 ## ลิขสิทธิ์
 
