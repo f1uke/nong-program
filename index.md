@@ -1,9 +1,0 @@
----
-layout: page
-is_home: true
-title: Homepage
-subtitle: หน้าหลัก
-disable_title: true
----
-
-# Hello homepage

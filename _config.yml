@@ -1,7 +1,7 @@
 production: false
 name: น้องโปรแกรม
 title: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
-description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub.com สำหรับผู้ที่ต้องการเริ่มแบบง่ายๆ รวดเร็ว และมีการสอนใช้เครื่องมือที่ทันสมัยกว่า
+description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub สำหรับผู้ที่ต้องการเริ่มแบบอย่างง่าย รวดเร็ว สามารถร่วมดัดแปลงเนื้อหาบนเว็บไซต์เราพร้อมกันได้ พร้อมกับการฝึกใช้งาน GitHub เพื่อให้สามารถเริ่มเขียน Source code ในการฝึกฝนตนเองผ่านชุมชนการพัฒนาโปรแกรมที่มีผู้ใช้งานมากที่สุด
 repository: https://github.com/nakorndev/nong-program
 url: https://nakorndev.github.io
 baseurl: /nong-program
@@ -11,13 +11,13 @@ email: nakorndev@gmail.com
 twitter:
   username: nakorndev
 facebook:
-  publisher: 1944714005562794
+  publisher: 173978953317093
 logo: /assets/icons/source.png
 social:
-  name: พี่บอล สอนโปรแกรมแบบโง่ๆ
+  name: โลกกลมๆของนายบอล
   links:
     - https://twitter.com/nakorndev
-    - https://www.facebook.com/1944714005562794
+    - https://www.facebook.com/173978953317093
     - https://github.com/nakorndev
     - https://www.patreon.com/bePatron?c=1655061
 google_site_verification: oBl61nKg-qYqrRiLnf60ML1QdnXyyLx1WiyRQaA9gOA
@@ -32,7 +32,7 @@ version:
 
 navigation:
   github: nakorndev/nong-program
-  facebook: 1944714005562794
+  facebook: 173978953317093
   patreon: bePatron?c=1655061
 
 timezone: Asia/Bangkok

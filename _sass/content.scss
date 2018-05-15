@@ -58,7 +58,7 @@
     text-align: center;
     padding-bottom: 5px;
   }
-  img:not(.emojione) {
+  img:not(.emojione):not(.image) {
     display: block;
     margin: 0 auto;
     padding-top: 10px;

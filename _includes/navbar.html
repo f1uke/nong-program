@@ -28,7 +28,9 @@
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-start">
       {% if page.is_doc %}
-        {% include docs_paginate.html %}
+        <div class="is-hidden-desktop mb-1">
+          {% include docs_paginate.html %}
+        </div>
       {% endif %}
       {% if site.navigation.patreon %}
         <a class="navbar-item is-hidden-desktop text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
