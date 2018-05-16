@@ -52,13 +52,15 @@
       {{ content }}
     </main>
   </div>
-  <footer id="footer" class="footer {% if page.is_doc %}is-docs{% endif %}">
-    <div class="container is-fluid">
-      <div class="content">
-        {% include footer.html %}
+  {% if page.disable_footer != true %}
+    <footer id="footer" class="footer {% if page.is_doc %}is-docs{% endif %}">
+      <div class="container is-fluid">
+        <div class="content">
+          {% include footer.html %}
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  {% endif %}
   <script src="{{ 'assets/js/offset.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/gumshoe.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/app.js' | absolute_url }}"></script>
