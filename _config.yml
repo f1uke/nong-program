@@ -63,6 +63,10 @@ collections:
 
 defaults:
   - scope:
+      path: ""
+    values:
+      image: /assets/images/og.jpg
+  - scope:
       path: _posts
       type: posts
     values:

@@ -18,7 +18,7 @@ layout: default
       <li><a href="{{ 'examples' | absolute_url }}">ตัวอย่างทั้งหมด</a></li>
       {% assign path = page.path | remove_first:'_examples/' | split:'/' %}
       <li>
-        <a href="{{ 'examples' | absolute_url }}/#{% for folder in path %}{% unless forloop.last %}{{ folder }}{% endunless %}{% endfor %}">
+        <a href="{{ 'examples' | absolute_url }}#{% for folder in path %}{% unless forloop.last %}{{ folder }}{% endunless %}{% endfor %}">
           {% for folder in path %}
             {% unless forloop.last %}
               {{ folder }}
