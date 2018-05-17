@@ -82,14 +82,12 @@ defaults:
     values:
       layout: doc
       is_doc: true
-      comments: true
   - scope:
       path: _examples
       type: examples
     values:
       layout: example
       is_example: true
-      comments: true
 
 exclude: [
   assets/images/_achieve/*,
