@@ -11,6 +11,7 @@ email: nakorndev@gmail.com
 twitter:
   username: nakorndev
 facebook:
+  app_id: 384680698713517
   publisher: 173978953317093
 logo: /assets/icons/source.png
 social:
@@ -21,6 +22,9 @@ social:
     - https://github.com/nakorndev
     - https://www.patreon.com/bePatron?c=1655061
 google_site_verification: oBl61nKg-qYqrRiLnf60ML1QdnXyyLx1WiyRQaA9gOA
+seo:
+  name: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
+  type: article
 
 version:
   bulma: 0.7.1
