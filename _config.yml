@@ -89,6 +89,7 @@ defaults:
     values:
       layout: example
       is_example: true
+      comments: true
 
 exclude: [
   assets/images/_achieve/*,
