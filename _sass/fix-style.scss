@@ -36,3 +36,7 @@
     width: 100%;
   }
 }
+
+.button.is-text.has-text-white:hover, .button.is-text.has-text-white:active {
+  color: black !important;
+}
