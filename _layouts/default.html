@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {% seo title=false %}
+  <meta property="og:type" content="article">
   {% feed_meta %}
   <title>
     {% if page.title and page.disable_title != true %}
@@ -54,7 +55,7 @@
   </div>
   {% if page.disable_footer != true %}
     <footer id="footer" class="footer {% if page.is_doc %}is-docs{% endif %}">
-      <div class="container is-fluid">
+      <div class="container">
         <div class="content">
           {% include footer.html %}
         </div>
@@ -64,7 +65,7 @@
   <script src="{{ 'assets/js/offset.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/gumshoe.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/app.js' | absolute_url }}"></script>
-  {% if page.is_doc %}
+  {% if page.is_doc or page.is_example %}
     <script>
       (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

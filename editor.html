@@ -29,7 +29,7 @@ disable_footer: true
     <div class="is-hidden-touch control">
       <div class="tags has-addons">
         <span class="tag is-info">Theme</span>
-        <span class="tag is-dark">vs-dark</span>
+        <span class="tag is-dark">vs-light</span>
       </div>
     </div>
   </div>
@@ -49,8 +49,8 @@ sayHello('nong-program');`;
 
     window._editor = monaco.editor.create(document.getElementById('monaco'), {
       language: 'javascript',
-      theme: 'vs-dark',
-      fontSize: 18,
+      theme: 'vs-light',
+      fontSize: 14,
       value: value
     });
     window.onresize = function() {

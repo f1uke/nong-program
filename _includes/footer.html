@@ -1,139 +1,109 @@
 <div class="columns">
-  <div class="column">
-    <p class="is-size-5">
-      น้องโปรแกรม โดย <a href="https://github.com/nakorndev">@nakorndev</a>
-    </p>
-    <p>
-      <ul style="color: #8b8b8b; font-size: .85rem;">
-        <li>Source code ภายใต้ลิขสิทธิ์ <a href="https://github.com/nakorndev/nong-program/blob/master/LICENSE">MIT</a></li>
-        <li>เนื้อหาบนเว็บไซต์ภายใต้ลิขสิทธิ์ <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></li>
-        <li>เนื้อหาถูกสร้างโดย <a href="https://pages.github.com/">GitHub Pages</a> เมื่อ {{ site.time | date: '%Y-%m-%d %H:%M:%S' }}</li>
-      </ul>
-    </p>
+  <div class="column is-three-quarters">
+    <div class="columns">
+      <div class="column">
+        <p class="is-size-5">
+          น้องโปรแกรม โดย <a href="https://github.com/nakorndev">@nakorndev</a>
+        </p>
+        <p>
+          <ul style="color: #8b8b8b; font-size: .85rem;">
+            <li>Source code ภายใต้ลิขสิทธิ์ <a href="https://github.com/nakorndev/nong-program/blob/master/LICENSE">MIT</a></li>
+            <li>เนื้อหาบนเว็บไซต์ภายใต้ลิขสิทธิ์ <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></li>
+            <li>เนื้อหาถูกสร้างโดย <a href="https://pages.github.com/">GitHub Pages</a> เมื่อ {{ site.time | date: '%Y-%m-%d %H:%M:%S' }}</li>
+          </ul>
+        </p>
+      </div>
+      <div class="column">
+        <p class="is-size-5">
+          ติดตามและแชร์ผ่าน Social
+        </p>
+        <a href="https://github.com/nakorndev">
+          <img class="mb-1 image" src="https://img.shields.io/github/followers/nakorndev.svg?style=social&label=Follow+@nakorndev" alt="Follow">
+        </a>
+        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2F173978953317093&width=250&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=384680698713517" width="250" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <strong>Sitemap</strong>
+        <ul>
+          <li>
+            <a href="{{ '' | absolute_url }}">👶 น้องโปรแกรม</a>
+          </li>
+          <li>
+            <a href="{{ 'docs/basic-programming/javascript/' | absolute_url }}">📚 เริ่มเรียน</a>
+          </li>
+          <li>
+            <a href="{{ 'examples' | absolute_url }}">🚀 ตัวอย่าง</a>
+          </li>
+          <li>
+            <a href="{{ 'editor' | absolute_url }}"><span class="icon has-text-link"><i class="fas fa-code"></i></span> Editor</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <strong>Social</strong>
+        <ul>
+          {% if site.navigation.github %}
+            <li>
+              <a href="{{ site.navigation.github | prepend: 'https://github.com/' }}">
+                <span class="icon text-github"><i class="fab fa-github"></i></span>
+                <span>GitHub</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if site.navigation.facebook %}
+            <li>
+              <a href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
+                <span class="icon text-facebook"><i class="fab fa-facebook"></i></span>
+                <span>Facebook</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if site.navigation.patreon %}
+            <li>
+              <a href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
+                <span class="icon text-patreon"><i class="fab fa-patreon"></i></span>
+                <span>Patreon</span>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="column">
+        <strong>Guideline</strong>
+        <ul>
+          <li>
+            <a href="https://github.com/nakorndev/nong-program/blob/master/LICENSE">License</a>
+          </li>
+          <li>
+            <a href="https://github.com/nakorndev/nong-program/blob/master/.github/CONTRIBUTING.md">Contributing</a>
+          </li>
+          <li>
+            <a href="https://github.com/nakorndev/nong-program/blob/master/.github/CODE_OF_CONDUCT.md">Code of conduct</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <strong>Special thanks</strong>
+        <ul>
+          <li>
+            <a href="https://github.com/">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.patreon.com">Patreon</a>
+          </li>
+          <li>
+            <a href="https://discordapp.com/">Discord</a>
+          </li>
+          <li>
+            <a href="https://javascript.info">JavaScript.info</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div class="column">
-    <p class="is-size-5">
-      ติดตามและแชร์ผ่าน Social
-    </p>
-    <a href="https://github.com/nakorndev">
-      <img class="mb-1 image" src="https://img.shields.io/github/followers/nakorndev.svg?style=social&label=Follow+@nakorndev" alt="Follow">
-    </a>
-    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2F173978953317093&width=250&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=384680698713517" width="250" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-  </div>
-  <div class="column">
-    <p class="is-size-5">
-      ร่วมกันพัฒนาน้องโปรแกรมกับเรา
-    </p>
-    <a href="https://github.com/nakorndev/nong-program">
-      <img class="mt-1 image" src="https://img.shields.io/github/stars/nakorndev/nong-program.svg?style=social&label=Stars" alt="Stars">
-    </a>
-    <a href="https://github.com/nakorndev/nong-program/fork">
-      <img class="mt-1 image" src="https://img.shields.io/github/forks/nakorndev/nong-program.svg?style=social&label=Fork" alt="Fork">
-    </a>
-  </div>
-</div>
-<div class="columns">
-  <div class="column">
-    <strong>Sitemap</strong>
-    <ul>
-      <li>
-        <a href="{{ '' | absolute_url }}">👶 น้องโปรแกรม</a>
-      </li>
-      <li>
-        <a href="{{ 'docs/basic-programming/javascript/' | absolute_url }}">📚 เริ่มเรียน</a>
-      </li>
-      <li>
-        <a href="{{ 'examples' | absolute_url }}">🚀 ตัวอย่าง</a>
-      </li>
-      <li>
-        <a href="{{ 'editor' | absolute_url }}"><span class="icon has-text-link"><i class="fas fa-code"></i></span> Editor</a>
-      </li>
-    </ul>
-  </div>
-  <div class="column">
-    <strong>Social</strong>
-    <ul>
-      {% if site.navigation.github %}
-        <li>
-          <a href="{{ site.navigation.github | prepend: 'https://github.com/' }}">
-            <span class="icon text-github"><i class="fab fa-github"></i></span>
-            <span>GitHub</span>
-          </a>
-        </li>
-      {% endif %}
-      {% if site.navigation.facebook %}
-        <li>
-          <a href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
-            <span class="icon text-facebook"><i class="fab fa-facebook"></i></span>
-            <span>Facebook</span>
-          </a>
-        </li>
-      {% endif %}
-      {% if site.navigation.patreon %}
-        <li>
-          <a href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
-            <span class="icon text-patreon"><i class="fab fa-patreon"></i></span>
-            <span>Patreon</span>
-          </a>
-        </li>
-      {% endif %}
-    </ul>
-  </div>
-  <div class="column">
-    <strong>Guideline</strong>
-    <ul>
-      <li>
-        <a href="https://github.com/nakorndev/nong-program/blob/master/LICENSE">License</a>
-      </li>
-      <li>
-        <a href="https://github.com/nakorndev/nong-program/blob/master/.github/CONTRIBUTING.md">Contributing</a>
-      </li>
-      <li>
-        <a href="https://github.com/nakorndev/nong-program/blob/master/.github/CODE_OF_CONDUCT.md">Code of conduct</a>
-      </li>
-    </ul>
-  </div>
-  <div class="column">
-    <strong>Dependency</strong>
-    <ul>
-      <li>
-        <a href="https://jekyllrb.com">Jekyll</a>
-      </li>
-      <li>
-        <a href="https://fontawesome.com">Fontawesome</a>
-      </li>
-      <li>
-        <a href="http://bulma.io">Bulma.io</a>
-      </li>
-      <li>
-        <a href="https://vuejs.org">Vue.js</a>
-      </li>
-      <li>
-        <a href="https://atomiks.github.io/tippyjs/">Tippy.js</a>
-      </li>
-      <li>
-        <a href="https://ned.im/noty/#/">Noty.js</a>
-      </li>
-      <li>
-        <a href="https://microsoft.github.io/monaco-editor/">Monaco Editor</a>
-      </li>
-    </ul>
-  </div>
-  <div class="column">
-    <strong>Special thanks</strong>
-    <ul>
-      <li>
-        <a href="https://github.com/">GitHub</a>
-      </li>
-      <li>
-        <a href="https://www.patreon.com">Patreon</a>
-      </li>
-      <li>
-        <a href="https://discordapp.com/">Discord</a>
-      </li>
-      <li>
-        <a href="https://javascript.info">JavaScript.info</a>
-      </li>
-    </ul>
+    <iframe src="https://discordapp.com/widget?id=246574419202277377&theme=light" height="350" allowtransparency="true" frameborder="0" style="max-width: 100%;"></iframe>
   </div>
 </div>

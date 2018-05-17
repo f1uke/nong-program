@@ -1,4 +1,4 @@
-production: false
+production: true
 name: น้องโปรแกรม
 title: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
 description: เรียนโปรแกรมกับเราฟรีผ่าน GitHub สำหรับผู้ที่ต้องการเริ่มแบบอย่างง่าย รวดเร็ว สามารถร่วมดัดแปลงเนื้อหาบนเว็บไซต์เราพร้อมกันได้ พร้อมกับการฝึกใช้งาน GitHub เพื่อให้สามารถเริ่มเขียน Source code ในการฝึกฝนตนเองผ่านชุมชนการพัฒนาโปรแกรมที่มีผู้ใช้งานมากที่สุด
@@ -11,6 +11,7 @@ email: nakorndev@gmail.com
 twitter:
   username: nakorndev
 facebook:
+  app_id: 384680698713517
   publisher: 173978953317093
 logo: /assets/icons/source.png
 social:
@@ -21,6 +22,9 @@ social:
     - https://github.com/nakorndev
     - https://www.patreon.com/bePatron?c=1655061
 google_site_verification: oBl61nKg-qYqrRiLnf60ML1QdnXyyLx1WiyRQaA9gOA
+seo:
+  name: เรียนโปรแกรมง่ายๆกับน้องโปรแกรม
+  type: article
 
 version:
   bulma: 0.7.1
@@ -78,7 +82,6 @@ defaults:
     values:
       layout: doc
       is_doc: true
-      comments: true
   - scope:
       path: _examples
       type: examples

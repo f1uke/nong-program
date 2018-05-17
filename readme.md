@@ -5,7 +5,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/nakorndev/nong-program.svg)
 ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/nakorndev/nong-program.svg)
 
-รับชมเว็บไซต์ได้ที่ [https://github.com/nakorndev/nong-program/releases](https://github.com/nakorndev/nong-program/releases)
+รับชมเว็บไซต์ได้ที่ [https://nakorndev.github.io/nong-program/](https://nakorndev.github.io/nong-program/)
 
 ## ผู้สนับสนุน
 
