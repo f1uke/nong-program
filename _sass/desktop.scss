@@ -7,17 +7,17 @@
 }
 
 @media screen and (min-width: 1088px) {
-  a.navbar-item.is-active:not(:hover):not([class*="is-extra"]),
-  a.navbar-item.is-active:not([class*="is-extra"]),
-  a.navbar-link.is-active:not([class*="is-extra"]),
-  a.navbar-link.is-active:not(:hover):not([class*="is-extra"]) {
+  .navbar-item.is-active:not(:hover):not([class*="is-extra"]),
+  .navbar-item.is-active:not([class*="is-extra"]),
+  .navbar-link.is-active:not([class*="is-extra"]),
+  .navbar-link.is-active:not(:hover):not([class*="is-extra"]) {
     background-color: transparent;
     color: initial;
     box-shadow: inset 0px -2px 0px $link;
   }
 
-  a.navbar-item.is-active[class*="is-extra"],
-  a.navbar-link.is-active[class*="is-extra"] {
+  .navbar-item.is-active[class*="is-extra"],
+  .navbar-link.is-active[class*="is-extra"] {
     background-color: #fafafa;
   }
 
