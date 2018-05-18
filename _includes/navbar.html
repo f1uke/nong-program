@@ -9,16 +9,14 @@
         <i class="fab fa-lg fa-github"></i>
       </a>
     {% endif %}
-    {% if site.navigation.twitter %}
-      <a class="navbar-item is-hidden-desktop text-twitter" target="_blank" href="{{ site.navigation.twitter | prepend: 'https://twitter.com/' }}">
-        <i class="fab fa-lg fa-twitter"></i>
-      </a>
-    {% endif %}
     {% if site.navigation.facebook %}
       <a class="navbar-item is-hidden-desktop text-facebook" target="_blank" href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
         <i class="fab fa-lg fa-facebook"></i>
       </a>
     {% endif %}
+    <a class="navbar-item is-hidden-desktop text-discord" target="_blank" href="https://discord.gg/gtz8vWg">
+      <i class="fab fa-lg fa-discord"></i>
+    </a>
     <div id="navbarBurger" class="navbar-burger" data-target="navMenu">
       <span></span>
       <span></span>
@@ -78,18 +76,16 @@
           <span>GitHub</span>
         </a>
       {% endif %}
-      {% if site.navigation.twitter %}
-        <a class="navbar-item is-hidden-touch text-twitter" target="_blank" href="{{ site.navigation.twitter | prepend: 'https://twitter.com/' }}">
-          <span class="icon is-medium"><i class="fab fa-lg fa-twitter"></i></span>
-          <span>Twitter</span>
-        </a>
-      {% endif %}
       {% if site.navigation.facebook %}
         <a class="navbar-item is-hidden-touch text-facebook" target="_blank" href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
           <span class="icon is-medium"><i class="fab fa-lg fa-facebook"></i></span>
           <span>Facebook</span>
         </a>
       {% endif %}
+      <a class="navbar-item is-hidden-touch text-discord" target="_blank" href="https://discord.gg/gtz8vWg">
+        <span class="icon is-medium"><i class="fab fa-lg fa-discord"></i></span>
+        <span>Discord</span>
+      </a>
       {% if site.navigation.patreon %}
         <a class="navbar-item is-hidden-touch text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
           <span class="icon is-medium text-patreon"><i class="fab fa-lg fa-patreon"></i></span>

@@ -10,6 +10,10 @@
   color: $facebook;
 }
 
+.text-discord, a.navbar-item.text-discord:hover {
+  color: $discord;
+}
+
 .text-patreon {
   color: $patreon;
 }
@@ -38,12 +42,17 @@
   background: $patreon;
 }
 
+.is-discord {
+  background: $discord;
+}
+
 .button {
   &.is-github,
   &.is-twitter,
   &.is-facebook,
   &.is-google,
-  &.is-pinterest {
+  &.is-pinterest,
+  &.is-discord {
     border-color: transparent;
     color: white;
   }
