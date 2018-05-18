@@ -103,7 +103,9 @@
       </div>
     </div>
   </div>
-  <div class="column">
-    <iframe src="https://discordapp.com/widget?id=246574419202277377&theme=light" height="350" allowtransparency="true" frameborder="0" style="max-width: 100%;"></iframe>
-  </div>
+  {% unless page.is_doc %}
+    <div class="column is-hidden-touch">
+      <iframe src="https://discordapp.com/widget?id=246574419202277377&theme=light" height="350" allowtransparency="true" frameborder="0" style="max-width: 100%;"></iframe>
+    </div>
+  {% endunless %}
 </div>
