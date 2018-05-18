@@ -28,7 +28,7 @@ seo:
 
 version:
   bulma: 0.7.1
-  fontawesome: 5.0.12
+  fontawesome: 5.0.13
   tippyjs: 2.5.2
   noty: 3.1.4
   vue: 2.5.16
