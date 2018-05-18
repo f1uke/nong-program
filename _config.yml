@@ -92,6 +92,7 @@ defaults:
 exclude: [
   assets/images/_achieve/*,
   _docs/_achieve/*,
+  _achieve/*,
   vendor,
   script,
   Gemfile,
