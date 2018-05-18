@@ -66,14 +66,16 @@
   <script src="{{ 'assets/js/gumshoe.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/app.js' | absolute_url }}"></script>
   {% if page.is_doc or page.is_example %}
-    <script>
-      (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://nakorndev.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-    </script>
+    {% unless page.disable_disqus %}
+      <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://nakorndev.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+      </script>
+    {% endunless %}
   {% endif %}
 </body>
 </html>
