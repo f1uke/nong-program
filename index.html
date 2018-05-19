@@ -28,30 +28,38 @@ disable_title: true
               📚 เริ่มเรียนกันเลย!
             </a>
           </div>
-          <div class="column is-offset-2 is-2">
-            <a href="https://github.com/nakorndev/nong-program" class="button is-none-decoration has-text-white is-text is-fullwidth">
-              <span class="icon"><i class="fab fa-github"></i></span>
-              <span>Star us!</span>
-            </a>
-          </div>
-          <div class="column is-2">
-            <a href="https://www.facebook.com/173978953317093" class="button is-none-decoration has-text-white is-text is-fullwidth">
-              <span class="icon"><i class="fab fa-facebook"></i></span>
-              <span>Follow us!</span>
-            </a>
-          </div>
-          <div class="column is-2">
-            <a href="https://discord.gg/gtz8vWg" class="button is-none-decoration has-text-white is-text is-fullwidth">
-              <span class="icon"><i class="fab fa-discord"></i></span>
-              <span>Join Discord!</span>
-            </a>
-          </div>
-          <div class="column is-2">
-            <a href="https://www.patreon.com/bePatron?c=1655061" class="button is-none-decoration has-text-white is-text is-fullwidth">
-              <span class="icon"><i class="fab fa-patreon"></i></span>
-              <span>Support me!</span>
-            </a>
-          </div>
+          {% if site.navigation.github %}
+            <div class="column is-offset-2 is-2">
+              <a href="{{ site.navigation.github | prepend: 'https://github.com/' }}" class="button is-none-decoration has-text-white is-text is-fullwidth">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Star us!</span>
+              </a>
+            </div>
+          {% endif %}
+          {% if site.navigation.facebook %}
+            <div class="column is-2">
+              <a href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}" class="button is-none-decoration has-text-white is-text is-fullwidth">
+                <span class="icon"><i class="fab fa-facebook"></i></span>
+                <span>Follow us!</span>
+              </a>
+            </div>
+          {% endif %}
+          {% if site.navigation.discord %}
+            <div class="column is-2">
+              <a href="{{ site.navigation.discord | prepend: 'https://discord.gg/' }}" class="button is-none-decoration has-text-white is-text is-fullwidth">
+                <span class="icon"><i class="fab fa-discord"></i></span>
+                <span>Join Discord!</span>
+              </a>
+            </div>
+          {% endif %}
+          {% if site.navigation.patreon %}
+            <div class="column is-2">
+              <a href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}" class="button is-none-decoration has-text-white is-text is-fullwidth">
+                <span class="icon"><i class="fab fa-patreon"></i></span>
+                <span>Support me!</span>
+              </a>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

@@ -68,6 +68,14 @@
               </a>
             </li>
           {% endif %}
+          {% if site.navigation.discord %}
+            <li>
+              <a href="{{ site.navigation.discord | prepend: 'https://discord.gg/' }}">
+                <span class="icon text-discord"><i class="fab fa-discord"></i></span>
+                <span>Discord</span>
+              </a>
+            </li>
+          {% endif %}
         </ul>
       </div>
       <div class="column">
@@ -91,10 +99,7 @@
             <a href="https://github.com/">GitHub</a>
           </li>
           <li>
-            <a href="https://www.patreon.com">Patreon</a>
-          </li>
-          <li>
-            <a href="https://discordapp.com/">Discord</a>
+            <a href="https://jekyllrb.com/">Jekyll</a>
           </li>
           <li>
             <a href="https://javascript.info">JavaScript.info</a>
