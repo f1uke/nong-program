@@ -353,3 +353,30 @@ let gradeCalc = new GradeCalc([
 ]).init();
 alert(gradeCalc.showOutput());
 ```
+
+โดยใช้โค้ดเดิมทั้งหมด ซึ่งอธิบาย Methods ได้ดังนี้
+
+- `constructor()` ต้องการ Arguments สำหรับการใส่ข้อมูล `subjects` เพื่อเก็บค่าลง Property เป็น Array ที่มี Object ในรูปแบบตามนี้
+
+```js
+[
+  {
+    key: String,
+    credit: Number,
+    label String
+  },
+  {
+    //
+  }
+]
+```
+
+- ในช่วงเริ่มทำงาน OOP จะเรียกใช้ `expect()` สำหรับตรวจสอบว่ามีค่าใดผิดพลาดหรือไม่ เช่น ไม่ได้ใส่ค่า ค่าหาย หรือค่าไม่ถูกประเภท หากผิดให้ทำการ `throw`
+- หลังจากนั้นให้ทำการเรียก `init()` ด้วยตนเอง สำหรับการเริ่มทำงานของ Class นี้ เช่นเดียวกับการทำงานของโปรแกรมด้านบน จะมี Methods แบ่งสำหรับการทำงานดังนี้
+  - ภายใน `init()` ทำการลูป `subjects` ทั้งหมด และรันคำสั่งต่อไปนี้
+    - `askGrade(subject)` สำหรับการขึ้น `prompt()` เพื่อกรอกเกรด ต้องการ `subject` ปัจจุบันบน Argument
+    - `getGrade(input)` สำหรับการ `Array.prototype.find()` เพื่อหาว่า `subject` ที่อยู่ปัจจุบันมีค่าเท่าใด
+    - `calcCA(credit)` และ `calcGP(grade, credit)` สำหรับการคำนวณดังชื่อของ Method
+    - `generateOutput(grade, subject, input)` สำหรับการสร้างเนื้อหาไว้แสดงผล
+  - เมื่อครบลูป ให้ทำการ `calcGPAX()` เพื่อคำนวณ GPAX ที่ได้ และ `return this;` เพื่อคืนค่าทั้งหมดของ Object
+- หลังจากนั้นเรียก `show()` สำหรับการดึงข้อความของผลลัพธ์ออกมา

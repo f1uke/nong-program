@@ -44,6 +44,13 @@
   {% else %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/{{ site.version.vue }}/vue.js"></script>
   {% endif %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7915188125215247",
+      enable_page_level_ads: true
+    });
+  </script>
 </head>
 <body>
   <div id="shadowed" style="display: none;"></div>
@@ -66,14 +73,16 @@
   <script src="{{ 'assets/js/gumshoe.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/app.js' | absolute_url }}"></script>
   {% if page.is_doc or page.is_example %}
-    <script>
-      (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://nakorndev.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-    </script>
+    {% unless page.disable_disqus %}
+      <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://nakorndev.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+      </script>
+    {% endunless %}
   {% endif %}
 </body>
 </html>
