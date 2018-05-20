@@ -68,6 +68,14 @@
               </a>
             </li>
           {% endif %}
+          {% if site.navigation.discord %}
+            <li>
+              <a href="{{ site.navigation.discord | prepend: 'https://discord.gg/' }}">
+                <span class="icon text-discord"><i class="fab fa-discord"></i></span>
+                <span>Discord</span>
+              </a>
+            </li>
+          {% endif %}
         </ul>
       </div>
       <div class="column">
@@ -91,10 +99,7 @@
             <a href="https://github.com/">GitHub</a>
           </li>
           <li>
-            <a href="https://www.patreon.com">Patreon</a>
-          </li>
-          <li>
-            <a href="https://discordapp.com/">Discord</a>
+            <a href="https://jekyllrb.com/">Jekyll</a>
           </li>
           <li>
             <a href="https://javascript.info">JavaScript.info</a>
@@ -105,7 +110,7 @@
   </div>
   {% unless page.is_doc %}
     <div class="column is-hidden-touch">
-      <iframe src="https://discordapp.com/widget?id=246574419202277377&theme=light" height="350" allowtransparency="true" frameborder="0" style="max-width: 100%;"></iframe>
+      <iframe src="https://discordapp.com/widget?id=447311585107640320&theme=light" height="350" allowtransparency="true" frameborder="0" style="max-width: 100%;"></iframe>
     </div>
   {% endunless %}
 </div>

@@ -14,9 +14,11 @@
         <i class="fab fa-lg fa-facebook"></i>
       </a>
     {% endif %}
-    <a class="navbar-item is-hidden-desktop text-discord" target="_blank" href="https://discord.gg/gtz8vWg">
-      <i class="fab fa-lg fa-discord"></i>
-    </a>
+    {% if site.navigation.discord %}
+      <a class="navbar-item is-hidden-desktop text-discord" target="_blank" href="{{ site.navigation.discord | prepend: 'https://discord.gg/' }}">
+        <i class="fab fa-lg fa-discord"></i>
+      </a>
+    {% endif %}
     <div id="navbarBurger" class="navbar-burger" data-target="navMenu">
       <span></span>
       <span></span>
@@ -94,15 +96,17 @@
         </a>
       {% endif %}
       {% if site.navigation.facebook %}
-        <a class="navbar-item is-hidden-touch text-facebook" target="_blank" href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
-          <span class="icon is-medium"><i class="fab fa-lg fa-facebook"></i></span>
-          <span>Facebook</span>
+      <a class="navbar-item is-hidden-touch text-facebook" target="_blank" href="{{ site.navigation.facebook | prepend: 'https://www.facebook.com/' }}">
+        <span class="icon is-medium"><i class="fab fa-lg fa-facebook"></i></span>
+        <span>Facebook</span>
+      </a>
+      {% endif %}
+      {% if site.navigation.discord %}
+        <a class="navbar-item is-hidden-touch text-discord" target="_blank" href="{{ site.navigation.discord | prepend: 'https://discord.gg/' }}">
+          <span class="icon is-medium"><i class="fab fa-lg fa-discord"></i></span>
+          <span>Discord</span>
         </a>
       {% endif %}
-      <a class="navbar-item is-hidden-touch text-discord" target="_blank" href="https://discord.gg/gtz8vWg">
-        <span class="icon is-medium"><i class="fab fa-lg fa-discord"></i></span>
-        <span>Discord</span>
-      </a>
       {% if site.navigation.patreon %}
         <a class="navbar-item is-hidden-touch text-patreon" target="_blank" href="{{ site.navigation.patreon | prepend: 'https://www.patreon.com/' }}">
           <span class="icon is-medium text-patreon"><i class="fab fa-lg fa-patreon"></i></span>
