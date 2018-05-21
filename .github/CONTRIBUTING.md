@@ -23,7 +23,7 @@
 bundle install
 ```
 
-จากนั้นทำการ `serve` ไปยัง [http://127.0.0.1:4000/nong-program](http://127.0.0.1:4000/nong-program) โดยใช้คำสั่งนี้
+จากนั้นทำการ `serve` ไปยัง [http://127.0.0.1:4000/nong-program/](http://127.0.0.1:4000/nong-program/) โดยใช้คำสั่งนี้
 
 ```bash
 bundle exec jekyll serve
